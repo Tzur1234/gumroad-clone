@@ -4,9 +4,12 @@ from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 
 from djgumroad.users.forms import UserAdminChangeForm, UserAdminCreationForm
+from .models import UserLibrary
 
 User = get_user_model()
 
+
+admin.site.register(UserLibrary)
 
 @admin.register(User)
 class UserAdmin(auth_admin.UserAdmin):
@@ -31,3 +34,5 @@ class UserAdmin(auth_admin.UserAdmin):
     )
     list_display = ["username", "name", "is_superuser"]
     search_fields = ["name"]
+
+
