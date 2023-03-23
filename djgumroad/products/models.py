@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 def product_image_path(instance, filename):
     return f"product_image/id_{instance.pk}/{filename}"
@@ -18,6 +19,10 @@ class Product(models.Model):
     def convert_to_dollars(self):
         # return f"{self.price / 100}"
         return "{0:.2f}".format(self.price / 100)
+
+    def get_absolute_url(self):
+        return reverse("products:product-detail", kwargs={"slug": self.slug})
+    
 
 
     def __str__(self):

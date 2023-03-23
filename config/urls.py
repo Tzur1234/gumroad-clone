@@ -32,6 +32,7 @@ urlpatterns += [
         SpectacularSwaggerView.as_view(url_name="api-schema"),
         name="api-docs",
     ),
+    path('p/', include('djgumroad.products.urls', namespace='products')),
 ]
 
 if settings.DEBUG:

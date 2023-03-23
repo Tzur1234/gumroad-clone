@@ -29,7 +29,8 @@ price
                                     <div class="bbb_deals_image"><img src="{{ product.cover.url }}" alt="{{ product.name }}"></div>
                                     <div class="bbb_deals_content">
                                         <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
-                                            <div class="bbb_deals_item_category"><a href="#">Link</a></div>
+                                            <div class="bbb_deals_item_category"><a href="{{ product.get_absolute_url }}">Link</a></div>
+                                            
                                             <div class="bbb_deals_item_price_a ml-auto"><strike>{{ product.price.convert_to_dollars }}</strike></div>
                                         </div>
                                         <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
