@@ -6,6 +6,7 @@ from pathlib import Path
 import environ
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
+
 # djgumroad/
 APPS_DIR = BASE_DIR / "djgumroad"
 env = environ.Env()
@@ -38,6 +39,7 @@ LOCALE_PATHS = [str(BASE_DIR / "locale")]
 # DATABASES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
+
 
 DATABASES = {
     "default": env.db(
