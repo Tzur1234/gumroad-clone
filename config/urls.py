@@ -11,6 +11,7 @@ from djgumroad.products import views
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path("discovery/", views.ProductListView.as_view(), name="discovery"),
+    path("user-products/", views.UserProductsView.as_view(), name="user-products"),
     
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),

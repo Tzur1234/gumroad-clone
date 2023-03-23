@@ -5,6 +5,7 @@ def product_image_path(instance, filename):
     return f"product_image/id_{instance.pk}/{filename}"
 
 class Product(models.Model):
+    user = models.ForeignKey("users.User",on_delete=models.CASCADE, related_name='products')
     name = models.CharField(max_length=30)
     description = models.TextField()
     cover = models.ImageField(blank=True, null=True, upload_to=product_image_path)
