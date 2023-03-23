@@ -116,7 +116,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "djgumroad.users",
-    "djgumroad.products",
+    "djgumroad.products.apps.ProductsConfig",
 
     # Your stuff: custom apps go here
 ]
