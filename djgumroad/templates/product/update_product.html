@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}Create a User{% endblock %}
+
+
+
+{% block content %}
+<h1>Update a product</h1>
+<form class="login w-50" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="primaryAction btn btn-primary" type="submit">Save Update</button>
+  </form>
+
+{% endblock content %}
+
+
