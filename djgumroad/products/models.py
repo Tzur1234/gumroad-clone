@@ -10,6 +10,7 @@ class Product(models.Model):
     description = models.TextField()
     cover = models.ImageField(blank=True, null=True, upload_to=product_image_path)
     slug = models.SlugField()
+    active = models.BooleanField(default=False)
 
     # content
     content_url = models.URLField(blank=True, null=True, max_length=200)
