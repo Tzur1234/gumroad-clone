@@ -1,8 +1,11 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-                                          
+    <div class="d-flex justify-content-between">
+        <a class="btn btn-primary" href="{% url 'products:product-update' product.slug %}"> Update </a>                 
+        <a class="btn btn-primary" href="{% url 'products:product-delete' pk=product.id %}"> Delete </a>
+    </div>                 
     <H1>{{ product.convert_to_dollars }}</H1>
     <H1>{{ product.name }}</H1>
-    
+    <img src="{% if product.cover %}{{ product.cover.url }}{% else %} https://www.salonlfc.com/en/image-not-found-2/ {% endif %}" alt="{{product.name}}">
 {% endblock content %}

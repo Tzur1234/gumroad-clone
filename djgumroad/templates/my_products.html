@@ -7,7 +7,7 @@
 
 
 <link href="{% static 'css/discovery/style.css' %}" rel="stylesheet">
-price
+
 {% endblock css %}
 
 {% block javascript %}
@@ -17,6 +17,11 @@ price
 
 {% block content %}
 <div class="container mydiv">
+        <div class="d-flex justify-content-between">
+            <h5>Your Products</h5>
+            <a href="{% url 'product-create' %}" class="btn btn-primary">Create Product</a>
+        </div>
+        <hr>
         <div class="row">
                 {% for product in products %}
                      <div class="col-md-4">
@@ -26,7 +31,7 @@ price
                             <div class="bbb_deals_title">Today's Combo Offer</div>
                             <div class="bbb_deals_slider_container">
                                 <div class=" bbb_deals_item">
-                                    <div class="bbb_deals_image"><img src="{% if product.cover %}{{ product.cover.url }}{% else %} https://www.salonlfc.com/en/image-not-found-2/ {% endif %}" alt="{{ product.name }}"></div>
+                                    <div class="bbb_deals_image"><img src="{% if product.cover %}{{ product.cover.url }}{% else %}https://images.wondershare.com/repairit/aticle/2021/07/resolve-images-not-showing-problem-1.jpg{% endif %}" alt="{{ product.name }}"></div>
                                     <div class="bbb_deals_content">
                                         <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
                                             <div class="bbb_deals_item_category"><a href="{{ product.get_absolute_url }}">Link</a></div>
