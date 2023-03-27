@@ -275,3 +275,5 @@ dump.rdb
 djgumroad/media/
 
 .pytest_cache/
+
+ngrok.exe
