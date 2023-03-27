@@ -16,6 +16,7 @@ urlpatterns = [
     path("create-checkout-session/<int:pk>/", views.CreateCheckoutSessionView.as_view(), name="create-checkout-session"),
     path("success/", views.SucessStripeView.as_view(), name="success"),
     path("webhooks/stripe/", views.StripeWebhookView, name="webhooks-stripe"),
+    path('userprofile/', views.UserProfileView.as_view(), name="user-profile"),
     
     
     # Django Admin, use {% url 'admin:index' %}
