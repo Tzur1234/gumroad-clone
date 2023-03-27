@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.http import HttpResponse
 from django.shortcuts import render
-from products.models import Product
+from products.models import Product, EmailProduct
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
@@ -189,6 +189,16 @@ def StripeWebhookView(request):
         except User.DoesNotExist:
             # TODO : handle anownymouse check out
             print('User does not exists')
+            # Create a EmailProduct
+            EmailProduct.objects.create(email=customer_email, product=product)
+
+            # send an email to the user
+            send_mail(
+            "You have successfuly bought the product !",
+            "Please sign in to your app",
+            "test2gmail.com",
+            [customer_email]
+        )
 
 
 

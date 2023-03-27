@@ -29,4 +29,8 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+class EmailProduct(models.Model):
+    email = models.EmailField(max_length=254)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     

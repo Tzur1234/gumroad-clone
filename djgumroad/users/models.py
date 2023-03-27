@@ -3,7 +3,7 @@ from django.db.models import CharField
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.db import models
-from products.models import Product
+from products.models import Product, EmailProduct
 from django.db.models.signals import post_save
 
 class User(AbstractUser):
@@ -47,6 +47,15 @@ class UserLibrary(models.Model):
 def crate_userlibrary_postsave(sender, instance, created, **kwargs):
     if created:
         UserLibrary.objects.create(user=instance)
+
+        # query all the Product associated with user.email
+        products_queryset = EmailProduct.objects.filter(email=instance.email).only('product')
+        products_queryset2 = list(EmailProduct.objects.filter(email=instance.email).values('product'))
+        print(products_queryset)
+        print(products_queryset2)
+        for product in products_queryset2:
+            print(product['product'])
+            instance.userlibrary.products.add(product['product'])
 
 
 post_save.connect(crate_userlibrary_postsave, sender=User)
