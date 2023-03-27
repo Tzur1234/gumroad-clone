@@ -6,13 +6,21 @@
 
 {% block content %}
     <div class="d-flex justify-content-between">
-        <a class="btn btn-primary" href="{% url 'products:product-update' product.slug %}"> Update </a>                 
-        <a class="btn btn-primary" href="{% url 'products:product-delete' pk=product.id %}"> Delete </a>
+        {% if request.user == product.user %}
+            <a class="btn btn-primary" href="{% url 'products:product-update' product.slug %}"> Update </a>                 
+            <a class="btn btn-primary" href="{% url 'products:product-delete' pk=product.id %}"> Delete </a>
+        {%else%}
+            <form action="{% url 'create-checkout-session' pk=product.id %}" method="POST">
+                {% csrf_token %}
+                <button class="btn btn-success" type="submit" id="checkout-button">Checkout</button>
+            </form>
+        {% endif %}
+    </div>
+    
+    
 
-        <form action="{% url 'create-checkout-session' pk=product.id %}" method="POST">
-            {% csrf_token %}
-            <button class="btn btn-success" type="submit" id="checkout-button">Checkout</button>
-        </form>
+
+        
     </div>                 
     <H1>{{ product.convert_to_dollars }}</H1>
     <H1>{{ product.name }}</H1>
