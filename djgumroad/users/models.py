@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.db import models
 from products.models import Product
+from django.db.models.signals import post_save
 
 class User(AbstractUser):
     """
@@ -16,6 +17,8 @@ class User(AbstractUser):
     name = CharField(_("Name of User"), blank=True, max_length=255)
     first_name = None  # type: ignore
     last_name = None  # type: ignore
+    stripe_customer_id = models.CharField(max_length=100, null=True, blank=True)
+    email = models.EmailField(_("email address"), blank=True, unique=True)
 
     def get_absolute_url(self):
         """Get url for user's detail view.
@@ -27,8 +30,8 @@ class User(AbstractUser):
         return reverse("users:detail", kwargs={"username": self.username})
 
 class UserLibrary(models.Model):
-    user = models.ForeignKey("User", on_delete=models.CASCADE, related_name='library')
-    products = models.ManyToManyField(Product ,blank=True)
+    user = models.OneToOneField("User", on_delete=models.CASCADE)
+    products = models.ManyToManyField(Product , blank=True)
 
     class Meta:
         verbose_name_plural = 'UserLibraries'
@@ -39,7 +42,14 @@ class UserLibrary(models.Model):
 
     
 
+# Signal - for each user create a new UserLibrary
 
+def crate_userlibrary_postsave(sender, instance, created, **kwargs):
+    if created:
+        UserLibrary.objects.create(user=instance)
+
+
+post_save.connect(crate_userlibrary_postsave, sender=User)
 
 
 

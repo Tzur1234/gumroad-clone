@@ -13,6 +13,9 @@ urlpatterns = [
     path("discovery/", views.ProductListView.as_view(), name="discovery"),
     path("user-products/", views.UserProductsView.as_view(), name="user-products"),
     path("product/create/", views.ProductCreatevView.as_view(), name="product-create"),
+    path("create-checkout-session/<int:pk>/", views.CreateCheckoutSessionView.as_view(), name="create-checkout-session"),
+    path("success/", views.SucessStripeView.as_view(), name="success"),
+    path("webhooks/stripe/", views.StripeWebhookView, name="webhooks-stripe"),
     
     
     # Django Admin, use {% url 'admin:index' %}

@@ -337,3 +337,10 @@ SPECTACULAR_SETTINGS = {
 }
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+# STRIPE API KEY
+STRIPE_PUBLIC_KEY= env("STRIPE_PUBLIC_KEY")
+STRIPE_SECRET_KEY= env("STRIPE_SECRET_KEY")
+STRIPE_WEBHOOK_SECRET= env("STRIPE_WEBHOOK_SECRET")
+
+
