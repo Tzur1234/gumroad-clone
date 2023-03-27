@@ -16,6 +16,7 @@ from django.views.decorators.csrf import csrf_exempt
 stripe.api_key = settings.STRIPE_SECRET_KEY
 User = get_user_model()
 
+# Shows all the products at all
 class ProductListView(generic.ListView):
     template_name = 'discovery.html'
     context_object_name = 'products'
@@ -37,7 +38,7 @@ class ProductDetailView(generic.DetailView):
     
     def get_queryset(self):
         return Product.objects.all()
-
+# Shows all created products
 class UserProductsView(LoginRequiredMixin, generic.ListView):
     template_name = 'my_products.html'
     context_object_name = 'products'
@@ -193,5 +194,9 @@ def StripeWebhookView(request):
 
 
     return HttpResponse(status=200)
+
+# Shows all purchase products
+class UserProfileView(LoginRequiredMixin, generic.TemplateView):
+    template_name = 'profile.html'    
 
 

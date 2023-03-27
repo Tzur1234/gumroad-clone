@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+
+<link href="{% static 'css/discovery/style.css' %}" rel="stylesheet">
+
+{% endblock css %}
+
+{% block javascript %}
+        <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'>
+{% endblock javascript %}
+
+{% block content %}
+<div class="container mydiv">
+        <div class="d-flex justify-content-between">
+            <h5>Your Products</h5>
+            <a href="{% url 'discovery' %}" class="btn btn-primary">Discovery</a>
+        </div>
+        <hr>
+        <div class="row">
+                {% for product in request.user.userlibrary.products.all %}
+                     <div class="col-md-4">
+                        <!-- bbb_deals -->
+                        <div class="bbb_deals">
+                            <div class="ribbon ribbon-top-right"><span><small class="cross">x </small>4</span></div>
+                            <div class="bbb_deals_title">Today's Combo Offer</div>
+                            <div class="bbb_deals_slider_container">
+                                <div class=" bbb_deals_item">
+                                    <div class="bbb_deals_image"><img src="{% if product.cover %}{{ product.cover.url }}{% else %}https://images.wondershare.com/repairit/aticle/2021/07/resolve-images-not-showing-problem-1.jpg{% endif %}" alt="{{ product.name }}"></div>
+                                    <div class="bbb_deals_content">
+                                        <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
+                                            <div class="bbb_deals_item_category"><a href="{{ product.get_absolute_url }}">Link</a></div>
+                                            
+                                            <div class="bbb_deals_item_price_a ml-auto"><strike>{{ product.price.convert_to_dollars }}</strike></div>
+                                        </div>
+                                        <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
+                                            <div class="bbb_deals_item_name">{{ product.name }} !!</div>
+                                            <div class="bbb_deals_item_price ml-auto">{{ product.convert_to_dollars }} $</div>
+                                        </div>
+                                        <div class="available">
+                                            <div class="available_line d-flex flex-row justify-content-start">
+                                                {% if product.active %}
+                                                    <button type="button" class="btn btn-outline-success">Active</button>                                  
+                                                {% else %}
+                                                <button type="button" class="btn btn-outline-danger">Not Active</button>
+                                                {% endif %}
+                                                <div class="sold_stars ml-auto"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                                            </div>
+                                            <div class="available_bar"><span style="width:17%"></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
