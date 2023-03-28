@@ -5,6 +5,10 @@ from django.utils.translation import gettext_lazy as _
 from django.db import models
 from products.models import Product, EmailProduct
 from django.db.models.signals import post_save
+import stripe
+from django.conf import settings
+
+stripe.api_key = 'sk_test_51MprlpESXHNK1nmVZs7f7dMBFCKvpSUUI7ir0f9ELX7ed9Xplj3ht4bqCflY23T97tK8X6TwwsEDCURfESNLw5CC00CAVcMBF0'
 
 class User(AbstractUser):
     """
@@ -19,6 +23,7 @@ class User(AbstractUser):
     last_name = None  # type: ignore
     stripe_customer_id = models.CharField(max_length=100, null=True, blank=True)
     email = models.EmailField(_("email address"), blank=True, unique=True)
+    customer_account_id = models.CharField(max_length=100, null=True, blank=True)
 
     def get_absolute_url(self):
         """Get url for user's detail view.
@@ -48,14 +53,20 @@ def crate_userlibrary_postsave(sender, instance, created, **kwargs):
     if created:
         UserLibrary.objects.create(user=instance)
 
-        # query all the Product associated with user.email
-        products_queryset = EmailProduct.objects.filter(email=instance.email).only('product')
-        products_queryset2 = list(EmailProduct.objects.filter(email=instance.email).values('product'))
-        print(products_queryset)
-        print(products_queryset2)
-        for product in products_queryset2:
+        # query all the Products associated with user.email
+        # add the products to the user's library
+        products_queryset = list(EmailProduct.objects.filter(email=instance.email).values('product'))
+        for product in products_queryset:
             print(product['product'])
             instance.userlibrary.products.add(product['product'])
+        
+        # Create Stipe account  
+        
+        account = stripe.Account.create(type="express")
+        instance.customer_account_id = account['id']
+        instance.save()
+        print(instance.customer_account_id)
+        
 
 
 post_save.connect(crate_userlibrary_postsave, sender=User)

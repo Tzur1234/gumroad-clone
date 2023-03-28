@@ -38,7 +38,8 @@ class ProductDetailView(generic.DetailView):
     
     def get_queryset(self):
         return Product.objects.all()
-# Shows all created products
+
+# Shows all user's created products
 class UserProductsView(LoginRequiredMixin, generic.ListView):
     template_name = 'my_products.html'
     context_object_name = 'products'
@@ -46,6 +47,18 @@ class UserProductsView(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
 
         return Product.objects.filter(user=self.request.user)
+
+    # Did the user has already created Stripe account?
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        account = stripe.Account.retrieve(self.request.user.customer_account_id)
+        details_submitted = account["details_submitted"]
+        print('details_submitted: ',details_submitted)
+        context["details_submitted "] = details_submitted
+
+        return context
+    
 
 class ProductCreatevView(LoginRequiredMixin, generic.CreateView):
     template_name = 'product/create_product.html'
@@ -116,10 +129,11 @@ class CreateCheckoutSessionView(generic.View):
             stripe_customer_id = None
             stripe_customer_email = None
 
+        # Product image
         product_images_url = ['https://images.pexels.com/photos/14239996/pexels-photo-14239996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1']
-        # if choosen_product.cover:
-        #     product_images_url.append(choosen_product.cover.url)
-        #     print(choosen_product.cover.url)
+        if choosen_product.cover:
+            product_images_url.append(YOUR_DOMAIN + choosen_product.cover.url)
+
         
         checkout_session = stripe.checkout.Session.create(
             customer_id=stripe_customer_id,
@@ -138,6 +152,11 @@ class CreateCheckoutSessionView(generic.View):
                                 'quantity': 1,
                             },
                         ],
+            # data about fee and paying destination
+            payment_intent_data={
+                                    "application_fee_amount": 100,
+                                    "transfer_data": {"destination": choosen_product.user.customer_account_id}, # User paying destination
+                                },
             mode='payment',
             success_url=YOUR_DOMAIN + reverse('success'),
             cancel_url=YOUR_DOMAIN + reverse('discovery'),
@@ -153,6 +172,7 @@ class SucessStripeView(generic.TemplateView):
 def StripeWebhookView(request): 
     
     CHECKOUT_SESSION_COMPLETED = "checkout.session.completed"
+    ACCOUNT_WAS_PAID = "account.updated"
     # Listen for success payment
 
     payload = request.body    
@@ -175,7 +195,7 @@ def StripeWebhookView(request):
         return HttpResponse(status=400)
 
     if event["type"] == CHECKOUT_SESSION_COMPLETED:
-        print(event)
+
         
         product_id = event["data"]["object"]["metadata"]["product_id"]
         product = Product.objects.get(id=product_id)
@@ -204,12 +224,17 @@ def StripeWebhookView(request):
             [customer_email]
         )
 
+        # if the money was transferd to the customer
+    
+    if event["type"] == ACCOUNT_WAS_PAID:
+        print("The money was transfered  succesfuly")
+
 
 
 
     return HttpResponse(status=200)
 
-# Shows all purchase products
+# Bought products
 class UserProfileView(LoginRequiredMixin, generic.TemplateView):
     template_name = 'profile.html'    
 
