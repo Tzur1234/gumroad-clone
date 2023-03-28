@@ -16,9 +16,18 @@
 {% endblock javascript %}
 
 {% block content %}
+    <!-- link to create Stripe account -->
+    <div class="d-flex justify-content-center">
+        <a href="{% url 'stripe-account-link' %}" class="btn btn-primary">Connect yout stripe account to get paid</a>
+    </div>
+
+{% if details_submitted %}
+    All detail was submitted
+{% endif %}
+
 <div class="container mydiv">
         <div class="d-flex justify-content-between">
-            <h5>Your Products</h5>
+            <h5>Products you cerated</h5>
             <a href="{% url 'product-create' %}" class="btn btn-primary">Create Product</a>
         </div>
         <hr>
