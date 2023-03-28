@@ -116,7 +116,10 @@ class CreateCheckoutSessionView(generic.View):
             stripe_customer_id = None
             stripe_customer_email = None
 
-            
+        product_images_url = ['https://images.pexels.com/photos/14239996/pexels-photo-14239996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1']
+        # if choosen_product.cover:
+        #     product_images_url.append(choosen_product.cover.url)
+        #     print(choosen_product.cover.url)
         
         checkout_session = stripe.checkout.Session.create(
             customer_id=stripe_customer_id,
@@ -128,6 +131,7 @@ class CreateCheckoutSessionView(generic.View):
                                                 'currency': 'usd',
                                                 'product_data': {
                                                     'name': choosen_product.name,
+                                                    'images': product_images_url
                                                 },
                                                 'unit_amount': choosen_product.price,
                                                 },
