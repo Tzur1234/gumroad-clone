@@ -1,4 +1,7 @@
 {% load static i18n %}
+
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +21,31 @@
 
     <!-- This file stores project-specific CSS -->
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
+
+
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700' rel='stylesheet' type='text/css'>
+
+    <!-- CSS Plugin Files -->
+    <link href="{% static 'assets/css/lib/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/plugins/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/plugins/lineicons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendors/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/bootstrap-select.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendors/owl-carousel/assets/owl.carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/plugins/animate.css' %}" rel="stylesheet">
+
+    
+
+    <!--========== Main Styles==========-->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+    <!-- Theme CSS (For Available Color Options, See Documentation ) -->
+    <link href="{% static 'assets/css/themes/blue-orange.css' %}" rel="stylesheet">
     {% endblock %}
+    
+    
     <!-- Le javascript
     ================================================== -->
     {# Placed at the top of the document so pages load faster with defer #}
@@ -30,18 +57,42 @@
       <!-- place project specific Javascript in this file -->
       <script defer src="{% static 'js/project.js' %}"></script>
 
+
+      <!--========== Javascript Files ==========-->
+
+    <!-- jQuery Latest -->
+    <script src="{% static 'js/lib/jquery-2.2.0.min.js' %}"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'js/lib/bootstrap.min.js' %}"></script>
+
+    <!-- Plugins -->
+    <script src="{% static 'vendors/owl-carousel/owl.carousel.js' %}"></script>
+    <script src="{% static 'vendors/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'js/plugins/wow.min.js' %}"></script>
+
+    <!-- Main JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+
+
     {% endblock javascript %}
 
   </head>
 
   <body>
+    
+
+    
 
     <div class="mb-2">
      {% include "navbar.html" %}
     </div>
 
   
-    <div class="container">
+    <div class="container align-items-center {% block backimg %} {% endblock backimg %}">
 
       {% if messages %}
         {% for message in messages %}
@@ -69,7 +120,7 @@
     Script tags with only code, no src (defer by default). To run
     with a "defer" so that you run inline code:
     <script>
-      window.addEventListener('DOMContentLoaded', () => {/* Run whatever you want */});
+      
     </script>
     {% endcomment %}
     {% endblock inline_javascript %}

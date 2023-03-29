@@ -1,0 +1,89 @@
+.sidebar{
+    @media (max-width: 991px){
+        margin-top: 60px;
+    }
+}
+
+.widget{    
+    & + .widget{
+        margin-top: 50px;
+    }
+}
+
+.widget-title{
+    margin: 0 0 20px;
+    font: 600 17px/1 $poppin;
+    text-transform: uppercase;
+}
+
+.widget-search{
+    form{
+        .form-control{
+            border-right: 0;
+            box-shadow: none;
+            & + .input-group-addon{
+                border-radius: 0;
+                padding: 0;
+                button{
+                    border: none;
+                    padding: 0 17px;                        
+                    i{}
+                }
+            }
+        }
+    }
+}
+
+.recent-post{
+    .media-left{
+        padding-right: 23px;
+        a{
+            display: block;
+            img{}
+        }
+    }
+    .media-body{
+        h4{
+            margin: 0 0 10px;
+            a{
+                font: 300 17px/27px $poppin;
+            }
+        }
+        h5{
+            margin: 0;
+            a{
+                font: 300 14px/1 $poppin;
+                text-decoration: underline;
+            }
+        }
+    }
+    & + .recent-post{
+        margin-top: 42px;
+    }
+}
+.categories{
+    li{
+        &:before{
+            content: '';
+            width: 30px;
+            height: 40px;
+            background: url(../images/right-angle2.png) no-repeat scroll 5px center;
+            float: left;
+        }
+        a{
+            font: 300 17px/40px $poppin;
+            padding: 0;
+            display: inline-block;
+        }
+    }
+}
+
+.tag{
+    margin-right: 15px;
+    margin-bottom: 15px;
+    float: left;
+    text-transform: uppercase;
+    font: 600 13px/38px $poppin;
+    border: 1px solid;
+    padding: 0 14px;
+}

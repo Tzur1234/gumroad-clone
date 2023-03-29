@@ -17,57 +17,60 @@
 
 {% block content %}
     <!-- link to create Stripe account -->
-    <div class="d-flex justify-content-center">
-        <a href="{% url 'stripe-account-link' %}" class="btn btn-primary">Connect yout stripe account to get paid</a>
-    </div>
+    
+    <div class="card">
+        <div class="card-header">
+          STRIPE ACCOUNT
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><strong>Payment details</strong></h5>
+          <p class="card-text">Connect yout stripe account to get paid</p>
+          <a href="{% url 'stripe-account-link' %}" class="btn btn-kickstarter">
+            <img src="{% static 'images/stripebutton.png' %}" height="50" width="300">
+        </a>
+        </div>
+      </div>
 
 {% if details_submitted %}
-    All detail was submitted
+    <div class="container">
+      <!-- Startup Logo -->
+      <div class="logo">
+          <a href="#"><img src="{% static 'assets/images/success-icon.png' %}" alt="Success Icon"></a>
+      </div>
+      <!-- Hero Title -->
+      <h2 class="h2">Thank you! </h2>
+      <!-- Sub Title -->
+      <p class="lead">All detail was submitted</p>
+
 {% endif %}
 
 <div class="container mydiv">
         <div class="d-flex justify-content-between">
-            <h5>Products you cerated</h5>
+            <h5>Products I created</h5>
             <a href="{% url 'product-create' %}" class="btn btn-primary">Create Product</a>
         </div>
         <hr>
-        <div class="row">
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody>
                 {% for product in products %}
-                     <div class="col-md-4">
-                        <!-- bbb_deals -->
-                        <div class="bbb_deals">
-                            <div class="ribbon ribbon-top-right"><span><small class="cross">x </small>4</span></div>
-                            <div class="bbb_deals_title">Today's Combo Offer</div>
-                            <div class="bbb_deals_slider_container">
-                                <div class=" bbb_deals_item">
-                                    <div class="bbb_deals_image"><img src="{% if product.cover %}{{ product.cover.url }}{% else %}https://images.wondershare.com/repairit/aticle/2021/07/resolve-images-not-showing-problem-1.jpg{% endif %}" alt="{{ product.name }}"></div>
-                                    <div class="bbb_deals_content">
-                                        <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
-                                            <div class="bbb_deals_item_category"><a href="{{ product.get_absolute_url }}">Link</a></div>
-                                            
-                                            <div class="bbb_deals_item_price_a ml-auto"><strike>{{ product.price.convert_to_dollars }}</strike></div>
-                                        </div>
-                                        <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
-                                            <div class="bbb_deals_item_name">{{ product.name }} !!</div>
-                                            <div class="bbb_deals_item_price ml-auto">{{ product.convert_to_dollars }} $</div>
-                                        </div>
-                                        <div class="available">
-                                            <div class="available_line d-flex flex-row justify-content-start">
-                                                {% if product.active %}
-                                                    <button type="button" class="btn btn-outline-success">Active</button>                                  
-                                                {% else %}
-                                                <button type="button" class="btn btn-outline-danger">Not Active</button>
-                                                {% endif %}
-                                                <div class="sold_stars ml-auto"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-                                            </div>
-                                            <div class="available_bar"><span style="width:17%"></span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                     </div>
-                {% endfor %}
-        </div>
-    </div>
+              <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{product.convert_to_dollars}}$</td>
+              </tr>
+              {% endfor %}
+            
+            </tbody>
+        </table>    
+</div>
 {% endblock content %}

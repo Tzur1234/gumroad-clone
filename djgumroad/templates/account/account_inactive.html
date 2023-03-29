@@ -4,8 +4,9 @@
 
 {% block head_title %}{% translate "Account Inactive" %}{% endblock %}
 
-{% block inner %}
-<h1>{% translate "Account Inactive" %}</h1>
-
-<p>{% translate "This account is inactive." %}</p>
+{% block content %}
+<div class="prose-lg">
+    <h1>{% trans "Account Inactive" %}</h1>
+    <p>{% trans "This account is inactive." %}</p>
+</div>
 {% endblock %}

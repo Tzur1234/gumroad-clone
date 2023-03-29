@@ -7,12 +7,12 @@
 {% block content %}
     <div class="d-flex justify-content-between">
         {% if request.user == product.user %}
-            <a class="btn btn-primary" href="{% url 'products:product-update' product.slug %}"> Update </a>                 
-            <a class="btn btn-primary" href="{% url 'products:product-delete' pk=product.id %}"> Delete </a>
+            <a class="btn btn-kickstarter" href="{% url 'products:product-update' product.slug %}"> Update </a>                 
+            <a class="btn btn-kickstarter" href="{% url 'products:product-delete' pk=product.id %}"> Delete </a>
         {%else%}
             <form action="{% url 'create-checkout-session' pk=product.id %}" method="POST">
                 {% csrf_token %}
-                <button class="btn btn-success" type="submit" id="checkout-button">Checkout</button>
+                <button class="btn btn-kickstarter" type="submit" id="checkout-button">Checkout</button>
             </form>
         {% endif %}
     </div>
@@ -24,7 +24,7 @@
     </div>                 
     <H1>{{ product.convert_to_dollars }}</H1>
     <H1>{{ product.name }}</H1>
-    <img src="{% if product.cover %}{{ product.cover.url }}{% else %} https://www.salonlfc.com/en/image-not-found-2/ {% endif %}" alt="{{product.name}}">
+    <img src="{% if product.cover %}{{ product.cover.url }}{% else %} {% static 'images/product-placeholder.png' %} {% endif %}" alt="{{product.name}}">
 {% endblock content %}
 
 

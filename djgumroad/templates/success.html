@@ -1,5 +1,31 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-    Success!
+      <!--========== Success Content ==========-->
+      <section class="row">
+        <div class="container">
+
+            <!-- Header Starts -->
+            <main id="top" class="text-center m-t-100">
+                <div class="container">
+                    <!-- Startup Logo -->
+                    <div class="logo">
+                        <a href="#"><img src="{% static 'assets/images/success-icon.png' %}" alt="Success Icon"></a>
+                    </div>
+                    <!-- Hero Title -->
+                    <h2 class="h2">Thank you! </h2>
+                    <!-- Sub Title -->
+                    <p class="lead">Your have purchased the product!You can find it in "My profile"</p>
+
+                </div>
+            </main>
+            <!-- //   Header Ends -->
+
+            <p class="text-center"><a href="{% url 'discovery' %}" class="btn btn-kickstarter btn-md">Go back to Discovery</a></p>
+
+            <p class="text-center"> <a href="{% url 'home' %}" class="btn btn-outline"> ← Back to Home</a> </p>
+
+        </div>
+    </section>
+
 {% endblock content %}

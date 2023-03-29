@@ -1,1 +1,40 @@
 {% extends "base.html" %}
+{% block backimg %} backimg {% endblock backimg %}
+{% block content %}
+{% load static %}
+
+    <!--==========Header==========-->
+    <div class="home" data-scroll-animation="true">
+        <header class="row" id="header">
+
+            <div class="top-banner row m0 text-center">
+                <div class="container">
+    
+                    <div class="row">
+                        <div class="d-flex justify-content-up">
+                            <div class="col-md-7 split-header text-left m-5 ">
+                                <h2 style="color:rgb(0, 0, 0);">Gumroad Clone</h2>
+                                <h2 style="color:rgb(6, 131, 6);">Build With Django</h2>
+                                <p>Sell your digital products and get paid </p>
+                                <a href="{% url 'user-products' %}"  class="btn btn-kickstarter btn-lg">Get Started</a>
+                            </div>
+                              <!-- Play Video Section -->
+                            <div class="col-md-5">
+                                <div class="play-video-block m-b-100-sm">
+                                    <a href="https://www.youtube.com/watch?v=dPL1-8ypnEs" class="video">
+                                        <img src="{% static 'assets/images/video-thumb.png' %}" alt="Video" class="img-responsive video-thumb" />
+                                        <img src="{% static 'assets/images/play-btn-big.png' %}" alt="play" class="play-btn" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>           
+                    </div>
+    
+                </div>
+            </div>
+        </header>
+    
+    </div>
+   
+{% endblock content %}
+

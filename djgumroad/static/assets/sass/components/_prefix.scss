@@ -1,0 +1,155 @@
+.m0 {
+    margin: 0;
+}
+
+.p0 {
+    padding: 0;
+}
+
+.m-t-0 {
+    margin-top: 0!important;
+}
+
+.m-b-20 {
+    margin-bottom: 20px!important;
+}
+
+.m-b-40 {
+    margin-bottom: 40px!important;
+}
+
+.m-b-80 {
+    margin-bottom: 80px!important;
+}
+
+.m-t-20 {
+    margin-top: 20px!important;
+}
+
+.m-t-40 {
+    margin-top: 40px!important;
+}
+
+.m-t-80 {
+    margin-top: 80px!important;
+}
+
+.m-v-40 {
+    margin-top: 40px!important;
+    margin-bottom: 40px!important;
+}
+
+.m-v-80 {
+    margin-top: 80px!important;
+    margin-bottom: 80px!important;
+}
+
+.m-t-100 {
+    margin-top: 100px!important;
+}
+
+.m-b-100 {
+    margin-bottom: 100px!important;
+}
+
+.p-t-0 {
+    padding-top: 0!important;
+}
+
+.display-block {
+    display: block;
+}
+
+.no-bg-img {
+    background-image: none!important;
+}
+
+.grey-bg {
+    background-color: #F0F0F2!important;
+}
+
+@media (min-width: 1600px) {
+    .big-container {
+        width: 1500px;
+    }
+}
+
+@media (max-width:992px) {
+    .m-b-100-sm {
+        margin-bottom: 100px!important;
+    }
+}
+
+.h2 {
+    margin: 20px 0 20px;
+    font: 600 65px/1 "Poppins", sans-serif;
+    letter-spacing: -3px;
+    color: #374048;
+}
+
+.btn-md {
+    padding: 0 33px;
+    font: 500 21px/58px "Poppins", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.btn-sm {
+    padding: 0 30px;
+    font: 500 18px/50px "Poppins", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+
+/*-----------------------*/
+
+.section-header {
+    margin-bottom: 50px;
+    text-align: center;
+    &:after {
+        content: '';
+        width: 82px;
+        height: 6px;
+        display: block;
+        margin: 0 auto;
+    }
+    h2 {
+        text-transform: uppercase;
+        font: 600 48px/29px $poppin;
+        padding-top: 5px;
+        margin: 0 0 25px;
+        @media (max-width: 767px) {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+    }
+    p {
+        max-width: 710px;
+        margin: 0 auto 20px;
+        font: 300 20px/32px $poppin;
+        @media (max-width: 767px) {
+            max-width: 90%;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+    &.v3 {
+        text-align: left;
+        margin: 0 0 44px;
+        &:after {
+            margin-left: 0;
+        }
+        p {
+            @media (max-width: 767px) {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.mfp-iframe-scaler {
+    .mfp-close {
+        color: #000;
+    }
+}

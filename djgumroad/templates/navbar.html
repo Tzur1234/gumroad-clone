@@ -1,3 +1,4 @@
+{% load static %}
 <nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container-fluid">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,24 +17,24 @@
           </li>
           
           {% if request.user.is_authenticated %}
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="{% url 'user-products' %}">My Products</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               {# URL provided by django-allauth/account/urls.py #}
               <a class="nav-link" href="{% url 'user-profile' %}"> My Profile </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               {# URL provided by django-allauth/account/urls.py #}
               <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
             </li>
           {% else %}
             {% if ACCOUNT_ALLOW_REGISTRATION %}
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
                 </li>
             {% endif %}
-            <li class="nav-item">
+            <li class="nav-item active">
               {# URL provided by django-allauth/account/urls.py #}
               <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">Sign In</a>
             </li>

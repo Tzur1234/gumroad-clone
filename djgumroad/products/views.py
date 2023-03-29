@@ -59,7 +59,6 @@ class UserProductsView(LoginRequiredMixin, generic.ListView):
 
         return context
     
-
 class ProductCreatevView(LoginRequiredMixin, generic.CreateView):
     template_name = 'product/create_product.html'
     form_class = ProductModelForm

@@ -1,0 +1,38 @@
+.how-it-works{
+    padding: 104px 0 95px;
+    .work-processes{
+        padding-top: 35px;
+    }
+}
+
+.work-process{
+    & + .work-process{
+        &:before{
+            content: '';
+            width: 30px;
+            height: 63px;
+            float: left;
+            margin-left: -30px;
+            display: block;
+            background: url(../images/right-angle.png) no-repeat scroll center 32px;
+            
+            @media (max-width: 767px){
+                float: none;
+                margin: 0 auto;
+                transform: rotate(90deg);
+                background-position: center center;
+            }
+        }
+    }
+    text-align: center;
+    .process-icon{
+        line-height: 106px;
+    }
+    h3{
+        font: 600 26px/1 $poppin;
+        margin: 60px 0 8px;
+    }
+    p{
+        font: 300 16px/28px $poppin;
+    }
+}

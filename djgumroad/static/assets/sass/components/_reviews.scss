@@ -1,0 +1,54 @@
+.reviews{
+    padding: 112px 0 50px;    
+}
+
+.review{
+    padding: 13px 15px 20px;
+    text-align: center;
+    & + .review{
+        @media (max-width: 767px){
+            margin-top: 30px;
+        }
+    }
+    .review-sign{
+        margin-bottom: 20px;
+    }
+    p{
+        margin-bottom: 30px;
+        font: 300 17px/29px $poppin;
+    }
+    .reviewer{
+        opacity: 0.5;
+    }
+}
+
+.featured-on{
+    text-align: center;
+    padding: 70px 0 90px;
+    h3{
+        font: 500 22px/1 $poppin;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+    ul{
+        li{
+            padding-top: 20px;
+            line-height: 47px;
+            @media (max-width: 991px){
+                float: left;
+                display: block;
+                width: calc(100% / 3);
+                text-align: center;
+            }
+            @media (max-width: 767px){
+                width: 100%;
+                line-height: 1;
+                padding: 15px 0;
+            }
+            img{
+                opacity: 0.33;
+                max-width: 100%;
+            }
+        }
+    }
+}
