@@ -1,0 +1,27 @@
+.faqs {
+    padding: 98px 0 78px;
+}
+
+.faq {
+    margin-top: 68px;
+    &:nth-child(1),
+    &:nth-child(2) {
+        margin-top: 35px;
+    }
+    h4 {
+        font: 500 20px/1 $poppin;
+        margin: 0 0 8px;
+    }
+    p {
+        font: 300 15px/25px $poppin;
+        margin: 0;
+    }
+}
+
+.faq-one-col {
+    text-align: center;
+    h4 {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+}

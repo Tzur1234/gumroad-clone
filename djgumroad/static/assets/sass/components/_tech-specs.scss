@@ -1,0 +1,31 @@
+.tech-specs{
+    padding: 78px 0 85px;    
+}
+
+.tech-specs-row{
+    &:first-child{
+        padding-top: 13px;
+    }
+    .tech-spec {        
+        padding: 35px 15px;
+        border-top: 1px solid;
+        min-height: 250px;
+        @media (max-width: 991px){
+            min-height: auto;
+        }
+        & + .tech-spec{
+            @media (max-width: 767px){
+            }
+        }
+    }
+    h4{
+        font: 20px/1 $poppin;
+        margin: 0 0 8px;
+    }
+    ul{
+        display: inline-block;
+        li{
+            font: 300 15px/25px $poppin;
+        }
+    }
+}

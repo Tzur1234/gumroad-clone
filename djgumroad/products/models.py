@@ -11,12 +11,12 @@ class Product(models.Model):
     cover = models.ImageField(blank=True, null=True, upload_to=product_image_path)
     slug = models.SlugField()
     active = models.BooleanField(default=False)
+    price = models.PositiveIntegerField(default=1)
 
     # content
     content_url = models.URLField(blank=True, null=True, max_length=200)
     content_file = models.URLField(blank=True, null=True, max_length=200)
 
-    price = models.PositiveIntegerField(default=1)
 
     def convert_to_dollars(self):
         # return f"{self.price / 100}"

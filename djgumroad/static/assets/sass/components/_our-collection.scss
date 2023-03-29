@@ -1,0 +1,28 @@
+.our-collection{
+    padding: 140px 0 88px;
+}
+.collections{
+    padding-top: 15px;
+    .item{
+        padding: 15px;
+        text-align: center;
+        .featured-img{
+            margin-bottom: 30px;
+            img{
+                max-width: 100%;
+            }
+        }
+        .title{
+            font: 500 16px/1 $poppin;
+            margin: 0;
+        }
+        .category{
+            margin: 5px 0 0;
+            font: 300 13px/1 $poppin;
+        }
+        .price{
+            font: 600 19px/1 $poppin;                
+            margin: 14px 0 20px;
+        }
+    }
+}

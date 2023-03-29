@@ -13,11 +13,16 @@ urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path("discovery/", views.ProductListView.as_view(), name="discovery"),
     path("user-products/", views.UserProductsView.as_view(), name="user-products"),
+    path('userprofile/', views.UserProfileView.as_view(), name="user-profile"),
+
+    # Product CRUD (Create, Retreive, Update, Delete)
     path("product/create/", views.ProductCreatevView.as_view(), name="product-create"),
+    path('p/', include('djgumroad.products.urls', namespace='products')),
+    
+    # Checkout + Webhooks + Account 
     path("create-checkout-session/<int:pk>/", views.CreateCheckoutSessionView.as_view(), name="create-checkout-session"),
     path("success/", views.SucessStripeView.as_view(), name="success"),
     path("webhooks/stripe/", views.StripeWebhookView, name="webhooks-stripe"),
-    path('userprofile/', views.UserProfileView.as_view(), name="user-profile"),
     path('stripe-account-link/', StripeAccountLinkView.as_view(), name="stripe-account-link"),
     
     
@@ -41,7 +46,7 @@ urlpatterns += [
         SpectacularSwaggerView.as_view(url_name="api-schema"),
         name="api-docs",
     ),
-    path('p/', include('djgumroad.products.urls', namespace='products')),
+   
 ]
 
 if settings.DEBUG:
