@@ -47,11 +47,11 @@
                                             <div class="available_line d-flex flex-row justify-content-start">
                                                 <div>
                                                     {% if product.active %}
-                                                    <a href="#" class="btn btn-success">Available</a>
+                                                    <a href="{{ product.get_absolute_url }}" class="btn btn-success">Available</a>
                                                     {%else%}                             
                                                     <a href="#" class="btn btn-danger">Not Available</a>                             
                                                     {% endif %}
-                                                </div>
+                                            </div>
                                                 <div class="sold_stars ml-auto"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
                                             </div>
                                             <div class="available_bar"><span style="width:17%"></span></div>

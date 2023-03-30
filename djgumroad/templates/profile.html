@@ -5,8 +5,10 @@
 
 <div class="container mydiv">
         <div class="d-flex justify-content-between m-5">
-            <h5><strong>Bought Products</strong></h5>
-            <a href="{% url 'discovery' %}" class="btn btn-secondary">Discovery</a>
+            <h2><strong>Bought Products</strong></h2>
+
+            <p class="text-center"><a href="{% url 'discovery' %}" class="btn btn-outline btn-md">Discovery</a></p>
+            
         </div>
         
         
@@ -21,21 +23,35 @@
               </tr>
             </thead>
             <tbody>
-                {% for product in products %}
-              <tr>
-                <th scope="row">{{ forloop.counter }}</th>
-                <td>{{ product.name }}</td>
-                <td>{{ product.description }}</td>
-                <td>{{product.content_file}}$</td>
-              </tr>
+                {% for product in request.user.userlibrary.products.all %}
+                  <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.description }}</td>
+                    {% if product.content_url %}
+                    <td>
+                      <a href="{{ product.content_url }}" target="_blank" type="button">View Content</a>
+                    </td>
+                    {% else %}
+                      <td> NO CONTENT_URL </td>
+                    {% endif %}
+                    
+                    {% if product.content_file %}
+                    <td>
+                      <a href="{{ product.content_file }}" target="_blank" type="button">View Content</a>
+                    </td>
+                    {% else %}
+                      <td> NO CONTENT_FILE </td>
+                    {% endif %}
+                </tr>
 
-              {%empty%}
-              <tr>
-                <th scope="row">EMPTY !</th>
-                <td>EMPTY !</td>
-                <td>EMPTY !</td>
-                <td>EMPTY !</td>
-              </tr>
+                  {%empty%}
+                  <tr>
+                    <th scope="row">EMPTY !</th>
+                    <td>EMPTY !</td>
+                    <td>EMPTY !</td>
+                    <td>EMPTY !</td>
+                  </tr>
 
               {% endfor %}
             

@@ -11,7 +11,6 @@ class UserAdminChangeForm(admin_forms.UserChangeForm):
     class Meta(admin_forms.UserChangeForm.Meta):
         model = User
 
-
 class UserAdminCreationForm(admin_forms.UserCreationForm):
     """
     Form for User Creation in the Admin Area.
@@ -25,7 +24,6 @@ class UserAdminCreationForm(admin_forms.UserCreationForm):
             "username": {"unique": _("This username has already been taken.")}
         }
 
-
 class UserSignupForm(SignupForm):
     """
     Form that will be rendered on a user sign up section/screen.
@@ -33,10 +31,11 @@ class UserSignupForm(SignupForm):
     Check UserSocialSignupForm for accounts created from social.
     """
 
-
 class UserSocialSignupForm(SocialSignupForm):
     """
     Renders the form when user has signed up using social accounts.
     Default fields will be added automatically.
     See UserSignupForm otherwise.
     """
+
+    
