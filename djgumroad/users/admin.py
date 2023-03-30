@@ -34,5 +34,6 @@ class UserAdmin(auth_admin.UserAdmin):
     )
     list_display = ["username", "name", "is_superuser", 'stripe_customer_id', 'customer_account_id']
     search_fields = ["name"]
+    list_editable = ('stripe_customer_id',)
 
 

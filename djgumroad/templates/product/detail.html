@@ -5,26 +5,76 @@
 {% endblock javascript %}
 
 {% block content %}
-    <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-evenly">
         {% if request.user == product.user %}
             <a class="btn btn-kickstarter" href="{% url 'products:product-update' product.slug %}"> Update </a>                 
-            <a class="btn btn-kickstarter" href="{% url 'products:product-delete' pk=product.id %}"> Delete </a>
+            <a class="btn btn-danger" href="{% url 'products:product-delete' pk=product.id %}"> Delete </a>
         {%else%}
-            <form action="{% url 'create-checkout-session' pk=product.id %}" method="POST">
-                {% csrf_token %}
-                <button class="btn btn-kickstarter" type="submit" id="checkout-button">Checkout</button>
-            </form>
+            {% if not has_access %}
+                <form action="{% url 'create-checkout-session' pk=product.id %}" method="POST">
+                    {% csrf_token %}
+                    <button class="btn btn-kickstarter btn-sm " type="submit" id="checkout-button">Checkout</button>
+                </form>
+            {% endif %} 
         {% endif %}
     </div>
-    
-    
+    <hr>
+         <div class="d-flex justify-content-center">
+            <div class="col-md-6">
+                <!-- bbb_deals -->
+                <div class="bbb_deals m-2 ">                               
+                        <div class="bbb_deals_title"><strong>Seler:{{product.user.email}}</strong></div>
+                              
+                    <div class="bbb_deals_slider_container">
+                        <div class=" bbb_deals_item">
+                            
+                            <div class="bbb_deals_image">
+                                <a href="{{ product.get_absolute_url }}">
+                                    <img src="{% if product.cover %}{{ product.cover.url }}{% else %}{% static 'images/product-placeholder.png' %}{% endif %}" alt="{{ product.name }}" width="500" height="300">
+                                </a>
+                            </div>
+                            <div class="bbb_deals_content">
+                                <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
+                                    <div class="bbb_deals_item_category"><a href="{{ product.get_absolute_url }}">Link</a></div>
+                                    
+                                    <div class="bbb_deals_item_price_a ml-auto"><strike>{{ product.price.convert_to_dollars }}</strike></div>
+                                </div>
+                                <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
+                                    <div class="bbb_deals_item_name">{{ product.name }}</div><br>
+                                    <div class="bbb_deals_item_price ml-auto">{{ product.convert_to_dollars }} $</div><br>
+
+                                </div>
+                                <div class="available">
+                                    <div class="available_line d-flex flex-row justify-content-start">
+                                        <div>
+                                            {% if has_access %}
+                                                    <p>You have access to this product</p>
+                                                    {% if product.content_url %}
+                                                        <a href="{{ product.content_url }}" target="_blank" rel="nofollow noreferrer" class="btn-kickstarter btn-md" type="button" id="checkout-button">
+                                                            View Content
+                                                        </a>
+                                                    {% endif %}
+                                                    {% if product.content_file %}
+                                                        <a href="{{ product.content_file }}" download class="btn-kickstarter btn-md" type="button" id="checkout-button">
+                                                            View Content
+                                                        </a>
+                                                    {% endif %}
+                                            {%else%}                             
+                                                    <a href="#" class="btn btn-danger">You didn't buy yet</a>                                       
+                                            {% endif %}
 
 
-        
-    </div>                 
-    <H1>{{ product.convert_to_dollars }}</H1>
-    <H1>{{ product.name }}</H1>
-    <img src="{% if product.cover %}{{ product.cover.url }}{% else %} {% static 'images/product-placeholder.png' %} {% endif %}" alt="{{product.name}}">
+                                          
+                                        </div>                
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+         </div>   
+
 {% endblock content %}
 
 

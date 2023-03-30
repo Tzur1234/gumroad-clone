@@ -29,10 +29,15 @@ class ProductDetailView(generic.DetailView):
     context_object_name = 'product'
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = super(ProductDetailView, self).get_context_data(**kwargs)
+        product = self.get_object()
+        has_access = False
+        if self.request.user.is_authenticated:
+            if product in self.request.user.userlibrary.products.all():
+                has_access = True
         context.update({
-            "STRIPE_PUBLIC_KEY": settings.STRIPE_PUBLIC_KEY
-        })  
+            "has_access": has_access
+        })
         return context
     
     
@@ -50,14 +55,17 @@ class UserProductsView(LoginRequiredMixin, generic.ListView):
 
     # Did the user has already created Stripe account?
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = super(UserProductsView, self).get_context_data(**kwargs)
 
         account = stripe.Account.retrieve(self.request.user.customer_account_id)
         details_submitted = account["details_submitted"]
-        print('details_submitted: ',details_submitted)
-        context["details_submitted "] = details_submitted
+        print('details_submitted ???: ',details_submitted)
+        context.update({
+            "details_submitted": details_submitted
+        })
 
         return context
+
     
 class ProductCreatevView(LoginRequiredMixin, generic.CreateView):
     template_name = 'product/create_product.html'
@@ -111,11 +119,7 @@ class CreateCheckoutSessionView(generic.View):
     
     def post(self, request, *args, **kwargs): 
 
-        if settings.DEBUG:
-            YOUR_DOMAIN = 'http://127.0.0.1:8000'
-        else: 
-            YOUR_DOMAIN = 'http://mydomain.com'
-
+        
         product_id = self.kwargs['pk']
         choosen_product = Product.objects.get(pk=product_id)
         # User identify
@@ -128,14 +132,28 @@ class CreateCheckoutSessionView(generic.View):
             stripe_customer_id = None
             stripe_customer_email = None
 
-        # Product image
-        product_images_url = ['https://images.pexels.com/photos/14239996/pexels-photo-14239996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1']
-        if choosen_product.cover:
-            product_images_url.append(YOUR_DOMAIN + choosen_product.cover.url)
+        if settings.DEBUG:
+            YOUR_DOMAIN = 'http://localhost:8000'
+            product_images_url = ['https://media.istockphoto.com/id/1291049124/photo/concept-for-debugging-and-fixing-errors-in-the-code.jpg?s=2048x2048&w=is&k=20&c=1xecIrsSNhtav7KAgB5majTkXUd147WfRWXyYSgqwWw=']
+        else: 
+            YOUR_DOMAIN = 'https://mydomain.com'
+            product_images_url = [YOUR_DOMAIN + choosen_product.cover.url]
+
+        # user id
+        if request.user.stripe_customer_id == None:
+            # Create user id 
+            customer_creation = 'always'
+        else:
+            # Dont Create new user id
+            customer_creation = "if_required"
 
         
+        print('user email', stripe_customer_email )
+        print('user customer_id', stripe_customer_id )
+        print('product_images_url', product_images_url )
+
         checkout_session = stripe.checkout.Session.create(
-            customer_id=stripe_customer_id,
+            
             customer_email=stripe_customer_email,
             line_items=[
                             {
@@ -157,6 +175,7 @@ class CreateCheckoutSessionView(generic.View):
                                     "transfer_data": {"destination": choosen_product.user.customer_account_id}, # User paying destination
                                 },
             mode='payment',
+            customer_creation=customer_creation,
             success_url=YOUR_DOMAIN + reverse('success'),
             cancel_url=YOUR_DOMAIN + reverse('discovery'),
             metadata={'product_id': product_id}
@@ -176,7 +195,7 @@ def StripeWebhookView(request):
 
     payload = request.body    
     sig_header = request.META["HTTP_STRIPE_SIGNATURE"]
-    endpoint_secret='whsec_o0T4qLvSeI0kjhpUs2JcHq9F0Ik9VUeY'
+    endpoint_secret=settings.STRIPE_WEBHOOK_SECRET
     
     try:
         event = stripe.Webhook.construct_event(
@@ -194,13 +213,14 @@ def StripeWebhookView(request):
         return HttpResponse(status=400)
 
     if event["type"] == CHECKOUT_SESSION_COMPLETED:
-
+        
+        print("The customer has paid !!!!!!!!!!!!!!!!!")
         
         product_id = event["data"]["object"]["metadata"]["product_id"]
         product = Product.objects.get(id=product_id)
         customer_email = event["data"]["object"]["customer_details"]["email"]
-        customer_id_stripe = event["data"]["object"]["customer"]
-        print('customer_id:', customer_id_stripe)
+        stripe_customer_id = event["data"]["object"]["customer"]
+        print('customer_id:', stripe_customer_id)
         print('customer_email:', customer_email)
         print('Try ...')
         try:
@@ -208,6 +228,9 @@ def StripeWebhookView(request):
             print('User exists')
             # give access to the product
             user.userlibrary.products.add(product)
+            if stripe_customer_id:
+                user.stripe_customer_id = stripe_customer_id
+                user.save()
             
         except User.DoesNotExist:
             # TODO : handle anownymouse check out
@@ -226,7 +249,7 @@ def StripeWebhookView(request):
         # if the money was transferd to the customer
     
     if event["type"] == ACCOUNT_WAS_PAID:
-        print("The money was transfered  succesfuly")
+        print("The money was transfered  succesfuly !")
 
 
 

@@ -10,6 +10,9 @@ from django.conf import settings
 
 stripe.api_key = 'sk_test_51MprlpESXHNK1nmVZs7f7dMBFCKvpSUUI7ir0f9ELX7ed9Xplj3ht4bqCflY23T97tK8X6TwwsEDCURfESNLw5CC00CAVcMBF0'
 
+def create_user_image_profile_path(instance, filename):
+    return f"user_image_profile/{instance.id}/{filename}"
+
 class User(AbstractUser):
     """
     Default custom user model for djgumroad.
@@ -21,6 +24,7 @@ class User(AbstractUser):
     name = CharField(_("Name of User"), blank=True, max_length=255)
     first_name = None  # type: ignore
     last_name = None  # type: ignore
+    image_profile = models.ImageField(upload_to=create_user_image_profile_path, null=True, blank=True)
     stripe_customer_id = models.CharField(max_length=100, null=True, blank=True)
     email = models.EmailField(_("email address"), blank=True, unique=True)
     customer_account_id = models.CharField(max_length=100, null=True, blank=True)
