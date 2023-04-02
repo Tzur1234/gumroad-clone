@@ -195,8 +195,9 @@ def StripeWebhookView(request):
 
     payload = request.body    
     sig_header = request.META["HTTP_STRIPE_SIGNATURE"]
-    endpoint_secret=settings.STRIPE_WEBHOOK_SECRET
-    print('endpoint_secret: ', endpoint_secret)
+    # endpoint_secret=settings.STRIPE_WEBHOOK_SECRET
+    endpoint_secret='whsec_o0T4qLvSeI0kjhpUs2JcHq9F0Ik9VUeY'
+    # print('endpoint_secret: ', endpoint_secret)
     
     try:
         event = stripe.Webhook.construct_event(
