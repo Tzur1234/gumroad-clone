@@ -32,3 +32,12 @@ WEB_CONCURRENCY=4
 # ------------------------------------------------------------------------------
 REDIS_URL=redis://redis:6379/0
 
+# STRIPE
+
+STRIPE_PUBLIC_KEY=pk_test_51MprlpESXHNK1nmV6Sx5eeEBVeiRXWX0wIt6gC4i6NloeNStpcJWF8pKnlQCkbfdBOPki7yYV1BY5N0QR36F1QSf00I6X7EJCS
+
+STRIPE_SECRET_KEY=sk_test_51MprlpESXHNK1nmVZs7f7dMBFCKvpSUUI7ir0f9ELX7ed9Xplj3ht4bqCflY23T97tK8X6TwwsEDCURfESNLw5CC00CAVcMBF0
+
+STRIPE_WEBHOOK_SECRET=whsec_o0T4qLvSeI0kjhpUs2JcHq9F0Ik9VUeY
+
+
