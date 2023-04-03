@@ -1,6 +1,7 @@
-/* 
+/* {
  *  Owl Carousel - Animate Plugin
  */
+
 .owl-carousel .animated {
   -webkit-animation-duration: 1000ms;
   animation-duration: 1000ms;
@@ -174,7 +175,7 @@
   top: 50%;
   margin-left: -40px;
   margin-top: -40px;
-  background: url("owl.video.play.png") no-repeat;
+  /* background: url("owl.video.play.png") no-repeat; */
   cursor: pointer;
   z-index: 1;
   -webkit-backface-visibility: hidden;
