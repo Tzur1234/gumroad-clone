@@ -1,0 +1,177 @@
+.timeline {
+    padding: 85px 0;
+    .section-header {
+        margin-bottom: 58px;
+    }
+}
+
+.timeline-row {
+    position: relative;
+    &:before {
+        content: '';
+        width: 8px;
+        height: 100%;
+        display: block;
+        position: absolute;
+        left: calc(50% - 4px);
+        z-index: 0;
+        @media (max-width: 767px) {
+            left: 15px;
+            border-radius: 5px;
+        }
+    }
+}
+
+.timeline-post {
+    @media (max-width: 767px) {
+        padding: 0 15px;
+    }
+    .bar-content {
+        text-align: center;
+        @media (max-width: 767px) {
+            text-align: left;
+            padding-left: 30px;
+        }
+        .inner {
+            padding: 0 30px;
+            font: 500 15px/35px $poppin;
+            min-width: 96px;
+            border-radius: 4px;
+            display: inline-block;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+    }
+    .half-side {
+        text-align: right;
+        @media (max-width: 767px) {
+            text-align: left;
+            width: 100%;
+        }
+        h4 {}
+        p {}
+        &.date {
+            padding-right: 35px;
+            font: 500 15px/55px $poppin;
+            text-transform: uppercase;
+        }
+        &.content {
+            padding-left: 40px;
+            @media (max-width: 767px) {
+                padding-left: 15px;
+            }
+            .inner {
+                border-radius: 5px;
+                display: inline-block;
+                padding: 20px 25px;
+                @media (max-width: 767px) {
+                    padding: 10px 12px;
+                }
+                h4 {
+                    margin: 0;
+                    font: 500 18px/15px $poppin;
+                    white-space: nowrap;
+                    @media (max-width: 767px) {
+                        font-size: 16px;
+                        white-space: normal;
+                        line-height: 22px;
+                    }
+                }
+                p {
+                    font: 300 14px/24px $poppin;
+                    margin: 10px 0 0;
+                    width: 240px;
+                    @media (max-width: 767px) {
+                        width: auto;
+                    }
+                }
+            }
+        }
+        & + .half-side {
+            position: relative;
+            text-align: left;
+            &:before {
+                content: '';
+                width: 24px;
+                height: 24px;
+                display: block;
+                border: 6px solid;
+                border-radius: 100%;
+                position: absolute;
+                top: 15px;
+                left: -12px;
+                @media (max-width: 767px) {
+                    top: -40px;
+                    left: -24px;
+                }
+            }
+        }
+    }
+    & + .timeline-post {
+        margin-top: 49px;
+    }
+    &.has-content {
+        @media (max-width: 767px) {
+            padding-left: 30px;
+        }
+        &.odd {
+            .half-side {
+                float: right;
+                text-align: left;
+                @media (max-width: 767px) {
+                    float: left;
+                }
+                &.date {
+                    padding-left: 35px;
+                    padding-right: 15px;
+                    @media (max-width: 767px) {
+                        padding-left: 15px;
+                    }
+                }
+                &.content {
+                    padding-left: 15px;
+                    padding-right: 45px;
+                    @media (max-width: 767px) {
+                        padding-right: 15px;
+                    }
+                    .inner {
+                        padding: 20px;
+                        @media (max-width: 767px) {
+                            padding: 10px 12px;
+                            text-align: left;
+                        }
+                    }
+                }
+                &:before {
+                    content: '';
+                    width: 24px;
+                    height: 24px;
+                    display: block;
+                    border: 6px solid;
+                    border-radius: 100%;
+                    position: absolute;
+                    top: 15px;
+                    left: -12px;
+                    @media (max-width: 767px) {
+                        display: none;
+                    }
+                }
+                & + .half-side {
+                    text-align: right;
+                    @media (max-width: 767px) {
+                        text-align: left;
+                    }
+                    &:before {
+                        display: none;
+                        @media (max-width: 767px) {
+                            display: block;
+                            top: -40px;
+                            left: -24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

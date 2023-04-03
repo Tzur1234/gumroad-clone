@@ -1,0 +1,1078 @@
+/*=====================================================================
+@Default Colors
+
+Table of Content:
+01/ Prefix
+02/ Header
+03/ The Product
+04/ How it Works
+05/ The Benefits
+06/ Left Right Content
+07/ Our Collection
+08/ The Watch
+09/ Splt Columns
+10/ Reviews
+11/ FAQs
+12/ Tech Specs
+13/ Our Team
+14/ Timeline
+15/ Mobile App
+16/ Newsletter
+17/ Contact
+18/ Footer
+19/ Page Header
+20/ Blog
+21/ Sidebar
+22/ Comments
+23/ Popup
+24/ Products
+=====================================================================*/
+
+@import "../variables";
+
+/*=====Color Styles By Section=====*/
+
+$primary: #FF1900;
+$secondary: #2FCA2D;
+
+/*===== GLOBAL =====*/
+
+a {
+    color: $primary;
+    &:hover,
+    &:focus {
+        color: darken($primary, 30%);
+    }
+}
+
+.btn-primary {
+    background: $primary;
+}
+
+.btn-warning {
+    background: $secondary;
+}
+
+.btn-block {
+    background: $primary;
+}
+
+
+/*=====Header=====*/
+
+header.row {
+    .navbar {
+        background: $white;
+        .navbar-header {
+            .navbar-toggle {
+                background: none;
+                border: none;
+                span {
+                    background: $baseColor;
+                }
+                &[aria-expanded="true"] {
+                    span {
+                        background: lighten(#374048, 28);
+                    }
+                }
+            }
+            .navbar-brand {
+                a {
+                    img {}
+                }
+            }
+        }
+        &.is-scrolling {
+            background: $white;
+            -webkit-box-shadow: 0 2px 42px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 42px rgba(0, 0, 0, 0.1);
+            .nav li {
+                a {
+                    color: #8f969d;
+                }
+                &.active a {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+header.alt-bg .navbar-default .nav > li > a {
+    color: #fff;
+}
+
+header.alt-bg .navbar .navbar-header .navbar-toggle span {
+    background: $white;
+}
+
+header.alt-bg .navbar.is-scrolling .navbar-header .navbar-toggle span {
+    background: $baseColor;
+}
+
+.navbar-default {
+    .nav {
+        li {
+            a {
+                color: #8f969d;
+                &:hover,
+                &:focus {
+                    color: $baseColor;
+                    background: none;
+                }
+            }
+            &.active {
+                a {
+                    background: none;
+                    color: $secondary;
+                }
+            }
+        }
+    }
+    .navbar-nav > .open > {
+        a,
+        a:hover,
+        a:focus {
+            background-color: transparent;
+            color: $secondary;
+        }
+    }
+}
+
+.navbar-default .navbar-nav>.active>a {
+    &,
+    &:hover,
+    &:focus {
+        color: $secondary;
+    }
+}
+
+.top-banner {
+    h2 {
+        color: $baseColor;
+    }
+    p {
+        color: #8a9095;
+    }
+    .apple-watch {
+        img {}
+    }
+}
+
+body.home {
+    header {
+        .navbar {
+            background: transparent;
+        }
+    }
+}
+
+
+/*=====Section Header=====*/
+
+.section-header {
+    &:after {
+        background: #eee;
+    }
+    h2 {
+        color: $baseColor;
+    }
+    p {
+        color: #969da3;
+    }
+    &.v2 {
+        &:after {
+            background: #f6f8fa;
+        }
+        p {
+            color: #4e575f;
+        }
+    }
+}
+
+
+/*=====The Product=====*/
+
+.the-product {}
+
+.apple-watch-note-feature {}
+
+.feature-note {
+    color: $primary;
+    .indicator {
+        .plus-icon {
+            &:before {
+                border-color: $primary;
+            }
+            &:after {
+                background: $primary;
+            }
+            .plus {
+                background: $primary;
+                color: $white;
+            }
+        }
+    }
+    .feature-name {
+        &:before {
+            background: $primary;
+        }
+        &:after {
+            background: $primary;
+        }
+    }
+    &.show-cont {
+        .indicator {
+            .plus-icon {
+                &:after {}
+                .plus {}
+            }
+        }
+        .feature-name {
+            &:before {}
+            &:after {}
+        }
+    }
+}
+
+
+/*=====How it Works=====*/
+
+.how-it-works {
+    background: $lightGray;
+    .work-processes {}
+}
+
+.work-process {
+    .process-icon {}
+    h3 {
+        color: $baseColor;
+    }
+    p {
+        color: #737c85;
+    }
+}
+
+
+/*=====The Benefits=====*/
+
+.the-benefits {
+    .benefit-notes {}
+}
+
+.benefit {
+    .media {
+        .media-left {
+            span {
+                color: $primary;
+            }
+        }
+        .media-body {
+            h4 {
+                color: $baseColor;
+            }
+            p {
+                color: $darkGray;
+            }
+        }
+    }
+}
+
+
+/*=====Left Right Contents=====*/
+
+.left-right-contents {
+    background: $lightGray;
+    .media {
+        .media-left {
+            span {
+                color: $primary;
+            }
+        }
+        .media-body {
+            h4 {
+                color: $baseColor;
+            }
+            p {
+                color: $darkGray;
+            }
+        }
+    }
+}
+
+
+/*=====Our Collection=====*/
+
+.our-collection {}
+
+.collections {
+    .item {
+        .featured-img {
+            img {}
+        }
+        .title {
+            color: $primary;
+        }
+        .category {
+            color: #b4bcc3;
+        }
+        .price {
+            color: $secondary;
+        }
+    }
+}
+
+
+/*=====The Watch=====*/
+
+.the-watch {
+    background: $lightGray;
+}
+
+.the-watch-features {
+    ul {
+        li {
+            color: #696f74;
+        }
+    }
+}
+
+
+/*=====Split Columns=====*/
+
+.split-columns {}
+
+.split-column {
+    .image {}
+    .texts {
+        h2 {
+            color: $baseColor;
+        }
+        p {
+            color: $lightBluish;
+        }
+    }
+}
+
+
+/*=====Reviews=====*/
+
+.reviews {
+    background: $lightGray;
+}
+
+.review {
+    p {
+        color: #353535;
+    }
+}
+
+.featured-on {
+    background: $lightGray;
+    h3 {
+        color: $baseColor;
+    }
+}
+
+
+/*=====FAQ=====*/
+
+.faqs {}
+
+.faq {
+    h4 {
+        color: $baseColor;
+    }
+    p {
+        color: $darkGray;
+    }
+}
+
+
+/*=====Tech Specs=====*/
+
+.tech-specs {}
+
+.tech-specs-row {
+    .tech-spec {
+        border-top-color: #f4f5f6;
+    }
+    h4 {
+        color: $baseColor;
+    }
+    ul {
+        li {
+            color: $darkGray;
+        }
+    }
+}
+
+
+/*=====Team=====*/
+
+.team {
+    background: $lightGray;
+    .team_members {}
+}
+
+.member {
+    .inner {
+        background: $white;
+        .image {
+            img {}
+        }
+        .texts {
+            h4 {
+                color: $baseColor;
+            }
+            h5 {
+                color: $darkGray;
+            }
+        }
+    }
+}
+
+
+/*=====Timeline=====*/
+
+.timeline {
+    .section-header {}
+    .timeline-row {
+        &:before {
+            background: #dee0e2;
+        }
+    }
+}
+
+.timeline-post {
+    .bar-content {
+        .inner {
+            color: #bfc2c5;
+            background: #dee0e2;
+        }
+    }
+    .half-side {
+        &:before {
+            border-color: #dee0e2;
+            background: $white;
+        }
+        h4 {
+            color: #6a737b;
+        }
+        p {
+            color: #b7bbbf;
+        }
+        &.date {
+            color: #dadce0;
+        }
+        &.content {
+            .inner {
+                background: #f5f8fa;
+            }
+        }
+        & + .half-side {
+            &:before {
+                border-color: #dee0e2;
+                background: $white;
+            }
+        }
+    }
+    & + .timeline-post {}
+    &.has-content {
+        &.odd {
+            .half-side {
+                &.date {}
+                &.content {
+                    .inner {}
+                }
+                &:before {}
+                & + .half-side {
+                    &:before {
+                        @media (max-width: 767px) {
+                            border-color: #dee0e2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*=====Mobile App=====*/
+
+.mobile-app {
+    background: $black;
+    &:before {}
+    img {}
+    h2 {
+        color: $white;
+    }
+    p {
+        color: #feffff;
+    }
+    a {}
+}
+
+
+/*=====Newsletter=====*/
+
+.newsletter {
+    .section-header {}
+}
+
+.newsletter-form {
+    .input-group {
+        .input-group-addon {
+            background: none;
+            border-color: transparent;
+            button {
+                background: $primary;
+                &:hover,
+                &:focus {
+                    background: $baseColor;
+                }
+            }
+        }
+    }
+    p {
+        color: $lightBluish;
+    }
+}
+
+
+/*=====Contact=====*/
+
+.contact {
+    #mapBox {}
+}
+
+.flip-box-container {
+    .flip-box {}
+}
+
+.contact-box {
+    background: $white;
+    h2 {
+        color: $baseColor;
+    }
+    ul {
+        li {
+            color: #a5aeb3;
+            i {}
+        }
+    }
+}
+
+.contact-form {
+    background: $white;
+}
+
+
+/*=====Footer=====*/
+
+footer.row {
+    background: $lightGray;
+    .menu-rights {
+        p {
+            color: #c3cbd1;
+        }
+    }
+}
+
+.footer-menu {
+    li {
+        color: lighten($primary, 30%);
+        a {
+            color: lighten($primary, 30%);
+            &:hover,
+            &:focus {
+                background: none;
+                color: $baseColor;
+            }
+        }
+    }
+}
+
+.social-links {
+    border-bottom-color: #e9eef2;
+    ul {
+        li {
+            a {
+                background: lighten($primary, 30%);
+                color: $white;
+                &:hover,
+                &:focus {
+                    background: $baseColor;
+                }
+            }
+        }
+    }
+}
+
+
+/*=====Page Header=====*/
+
+.page-header {
+    background: #e9eaec;
+    h2 {
+        color: $baseColor;
+    }
+    h4 {
+        color: #828588;
+    }
+}
+
+
+/*=====Sidebar=====*/
+
+.widget {
+    .widget-inner {}
+    & + .widget {}
+}
+
+.widget-title {
+    color: $baseColor;
+}
+
+.widget-search {
+    form {
+        .form-control {
+            border-color: #e2eaef;
+            background: $lightGray;
+            & + .input-group-addon {
+                border-color: #e2eaef;
+                background: $lightGray;
+                button {
+                    background-color: transparent;
+                    color: #ced5da;
+                    i {}
+                }
+            }
+        }
+    }
+}
+
+.recent-post {
+    .media-left {
+        a {
+            img {}
+        }
+    }
+    .media-body {
+        h4 {
+            a {
+                color: #656d75;
+            }
+        }
+        h5 {
+            color: #c7d0d8;
+            a {
+                color: #65a9f0;
+            }
+        }
+    }
+    & + .recent-post {}
+}
+
+.categories {
+    li {
+        &:before {}
+        a {
+            color: #8e9eac;
+            &:hover,
+            &:focus {
+                background: none;
+                color: $baseColor;
+            }
+        }
+    }
+}
+
+.tag {
+    color: #bdc7ce;
+    background: $lightGray;
+    border-color: #e0e8ee;
+    &:hover,
+    &:focus {
+        background: $baseColor;
+        border-color: $baseColor;
+        color: $white;
+    }
+}
+
+
+/*=====Blog=====*/
+
+.blog-section {}
+
+.blog {
+    .featured-img {
+        a {
+            img {}
+        }
+    }
+    h2 {
+        a {
+            color: #323f4a;
+            &:hover,
+            &:focus {
+                color: #2979ff;
+            }
+        }
+    }
+    h5 {
+        color: #a9b9c7;
+        a {
+            color: #52a8f5;
+            &:hover,
+            &:focus {
+                color: $baseColor;
+            }
+        }
+    }
+    p {
+        color: #8e9eac;
+    }
+    .btn-primary {
+        background: #2979ff;
+    }
+    .media {
+        .media-left {}
+        .media-body {}
+    }
+}
+
+.post-activity {
+    border-right-color: #e5e7ea;
+    @media (max-width: 499px) {
+        border-bottom-color: #e5e7ea;
+        border-top-color: #e5e7ea;
+    }
+    .activity {
+        & + .activity {
+            border-top-color: #e5e7ea;
+            @media (max-width: 499px) {
+                border-left-color: #e5e7ea;
+            }
+        }
+        a {
+            color: #97a1aa;
+            i {}
+            &:hover,
+            &:focus {}
+        }
+    }
+}
+
+.author-about {
+    background: $lightGray;
+    .media-left {
+        a {
+            img {}
+        }
+    }
+    .media-body {
+        h3 {
+            a {
+                color: #292929;
+                &:hover,
+                &:focus {
+                    color: #2979ff;
+                }
+            }
+        }
+        p {
+            color: #8e9eac;
+        }
+        ul {
+            li {
+                a {
+                    color: $white;
+                    background: #bbd4e6;
+                    i {}
+                    &:hover,
+                    &:focus {
+                        background: $baseColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*=====Comments======*/
+
+.comments-row {}
+
+.comment-count {
+    color: #292929;
+}
+
+.comment {
+    border-color: #d9e7f1;
+    p {
+        color: #8e9eac;
+    }
+}
+
+.commenter-link {
+    img {
+        border-color: #d9e7f1;
+    }
+}
+
+.commenter-name {
+    a {
+        color: #292929;
+    }
+    small {
+        a {
+            color: #8e9eac;
+        }
+    }
+}
+
+.add-comment {
+    h2 {
+        color: #292929;
+    }
+    p {
+        color: #c3d1de;
+    }
+    form {
+        textarea.form-control {}
+    }
+}
+
+
+/*=====PopUp Background======*/
+
+.mfp-bg {
+    background: #FFF;
+    opacity: 0.9;
+}
+
+
+/*=====Product======*/
+
+.product-box {
+    background: $white;
+    .mfp-close {
+        color: #8a9095;
+    }
+}
+
+.product-img-gallery {
+    background: #f8f8f8;
+}
+
+#product-imgs {
+    .item {
+        img {}
+    }
+    .carousel-indicators {
+        li {
+            background: #dadada;
+            &.active {
+                background: $primary;
+            }
+        }
+    }
+}
+
+.product-desc {
+    .name {
+        color: #848e96;
+    }
+    .edition {
+        color: $baseColor;
+    }
+    .model {
+        color: #a8afb5;
+    }
+    .price {
+        color: $primary;
+        del {
+            color: #808890;
+        }
+        .label {
+            background: #ff840f;
+        }
+    }
+    .description {
+        border-color: #eee;
+        p {
+            color: #979a9d;
+        }
+    }
+    .choose-form {
+        .choose-options {
+            border-color: #eee;
+        }
+        .option {
+            .form-label {
+                color: #6c6e71;
+            }
+            input[name="color"],
+            input[name="os0"] {
+                & + label {
+                    &:before {}
+                    &[for="color-1"] {
+                        background: #2eafff;
+                        &:before {
+                            border-color: #2eafff;
+                        }
+                    }
+                    &[for="color-2"] {
+                        background: #5c2eff;
+                        &:before {
+                            border-color: #5c2eff;
+                        }
+                    }
+                    &[for="color-3"] {
+                        background: #ff2e99;
+                        &:before {
+                            border-color: #ff2e99;
+                        }
+                    }
+                    &[for="color-4"] {
+                        background: #ffe62e;
+                        &:before {
+                            border-color: #ffe62e;
+                        }
+                    }
+                    &[for="color-5"] {
+                        background: #2effa1;
+                        &:before {
+                            border-color: #2effa1;
+                        }
+                    }
+                }
+            }
+        }
+        .submit-area {
+            .btn {
+                &:hover,
+                &:focus {
+                    color: $white;
+                }
+            }
+        }
+        .bootstrap-touchspin {
+            input {
+                border-color: #e0e8ee;
+                background: none;
+            }
+            button {
+                border-color: #e0e8ee;
+                &:before {
+                    color: #96a1a9;
+                }
+            }
+        }
+        .bootstrap-select {
+            .dropdown-toggle {
+                border-color: #e0e8ee;
+                color: $baseColor;
+                .bs-caret {
+                    color: #96a1a9;
+                    border-left-color: #e0e8ee;
+                }
+            }
+        }
+    }
+}
+
+
+/*=====Video======*/
+
+.video-row {}
+
+.watch-review {
+    & + button.mfp-close {
+        background: $white;
+        color: #333;
+        &:hover {
+            color: $black;
+        }
+    }
+}
+
+.pagination {
+    li {
+        a {
+            background: #f7f7f7;
+            color: #999;
+            &:hover,
+            &:focus {
+                color: $white;
+                background: #2979ff;
+            }
+        }
+        &.active {
+            a {
+                color: $white;
+                background: #2979ff;
+                &:hover,
+                &:focus {
+                    background: $baseColor;
+                }
+            }
+        }
+    }
+}
+
+
+/*  =========== NAV TABS =========== */
+
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+    background-color: $primary;
+}
+
+
+/*  =========== UTILITIES =========== */
+
+.help-block {
+    &.text-danger {
+        color: #FF5B58;
+    }
+    &.text-success {
+        color: #53CC2E;
+    }
+}
+
+
+/*  =========== PRICING =========== */
+
+.pricing {
+    border-color: $baseLight;
+    .pricing__title {
+        color: $primary;
+    }
+    .pricing__price {
+        color: $secondary;
+    }
+    &:hover {
+       border-color:darken($baseLight, 10%)
+    }
+}
+
+
+.pricing--featured {
+    background-color: $primary;
+
+    .pricing__title {
+        color: $white;
+    }
+    .pricing__price {
+        color: $white;
+    }
+
+    .pricing__content li {
+        color: $white;
+    }
+}

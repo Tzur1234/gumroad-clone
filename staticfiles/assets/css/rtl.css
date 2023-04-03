@@ -1,0 +1,134 @@
+/*------------ RTL VERSION --------------*/
+
+.navbar-right {
+    float: left;
+}
+
+.navbar-right {
+    margin-left: 10px;
+}
+
+.work-process + .work-process:before {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+    float: right;
+}
+
+.the-watch-features ul li:before {
+    margin-left: 17px;
+    float: right;
+}
+
+.section-header.v3 {
+    text-align: right;
+}
+
+.split-column .texts .texts-inner {
+    padding-left: 0;
+    padding-right: 37px;
+}
+
+.timeline-post .half-side {
+    text-align: left;
+}
+
+.timeline-post .half-side + .half-side {
+    text-align: right;
+}
+
+.timeline-post .half-side.content {
+    padding-right: 40px;
+}
+
+.timeline-post .half-side + .half-side:before {
+    left: auto;
+    right: -12px;
+}
+
+.timeline-post.has-content.odd .half-side {
+    float: left;
+}
+
+.timeline-post.has-content.odd .half-side {
+    float: left;
+}
+
+.timeline-post.has-content.odd .half-side {
+    text-align: right;
+}
+
+.timeline-post .half-side.date {
+    padding-left: 35px;
+}
+
+.timeline-post.has-content.odd .half-side:before {
+    left: auto;
+    right: -12px;
+}
+
+.timeline-post.has-content.odd .half-side + .half-side {
+    text-align: left;
+}
+
+.timeline-post.has-content.odd .half-side.content {
+    padding-right: 15px;
+    padding-left: 45px;
+}
+
+.timeline-post.has-content.odd .half-side.date {
+    padding-right: 35px;
+    padding-left: 15px;
+}
+
+.newsletter-form .input-group-addon button {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.newsletter-form .input-group-addon button img {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.newsletter-form p img {
+    margin-left: 8px;
+}
+
+.contact-box ul li {
+    padding-right: 30px;
+}
+
+.contact-box ul li i {
+    float: right;
+    margin-right: -30px;
+}
+
+
+/*Product Popup*/
+
+.product-img-gallery {
+    float: right;
+}
+
+.product-desc {
+    float: right;
+}
+
+.carousel-indicators {
+    left: 50%;
+    right: 0;
+}
+
+.mfp-content {
+    text-align: right;
+}

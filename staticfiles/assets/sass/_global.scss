@@ -1,0 +1,413 @@
+/*============= Global =============*/
+body {
+    position: relative;
+}
+
+
+section {
+    background: $white;
+}
+
+section,
+header,
+footer {
+    &.row {
+        margin: 0;
+        font-family: $poppin;
+    }
+}
+
+a,
+.btn,
+button {
+    text-decoration: none;
+    outline: none;
+    @include transition();
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        outline: none;
+    }
+}
+
+h2,
+.h2 {
+    font-size: 35px;
+}
+
+p {
+    font: 300 14px/26px "Poppins", sans-serif;
+    color: #82898f;
+}
+
+li {
+    font: 300 14px/26px "Poppins", sans-serif;
+    color: #82898f;
+}
+
+
+/*============= BOXED Patterns =============*/
+
+.boxed {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #CCC;
+}
+
+[class^="pattern"] {
+    background-repeat: repeat;
+    background-position: top center;
+}
+
+// for loop patterns
+@for $j from 1 to 15 {
+    .pattern_#{$j} {
+        background-image: url('../images/patterns/pattern_#{$j}.png');
+    }
+}
+
+/*============= Buttons =============*/
+
+.btn {
+    border-radius: 30px;
+    font: 300 18px/26px $poppin;
+    padding: 10px 33px 0;
+    color: #ffffff;
+    border-color: $baseLight;
+    &:hover,
+    &:focus {
+        background: $baseColor;
+        border-color: $baseColor;
+        color: #fff;
+    }
+}
+
+.btn-primary {
+    border: none;
+    background: $primary;
+    color: #FFF;
+    padding: 0 28px;
+    &.btn-lg {
+        padding: 0 85px;
+        border-radius: 60px;
+        font: 500 27px/72px $poppin;
+        margin-bottom: 77px;
+        @media (max-width: 991px) {
+            padding: 0 70px;
+            font-size: 18px;
+            line-height: 60px;
+            margin-bottom: 15px;
+        }
+        @media (max-width: 767px) {
+            padding: 0 65px;
+        }
+    }
+}
+
+.btn-kickstarter {
+    border: none;
+    background: $kickstarter;
+    color: #FFF;
+    padding: 0 28px;
+    &.btn-lg {
+        padding: 0 45px;
+        border-radius: 60px;
+        font: 500 22px/65px $poppin;
+        margin-bottom: 77px;
+        @media (max-width: 991px) {
+            padding: 0 70px;
+            font-size: 18px;
+            line-height: 60px;
+            margin-bottom: 15px;
+        }
+        @media (max-width: 767px) {
+            padding: 2px 40px 16px;
+            line-height: 40px;
+            img {
+                display: block;
+            }
+        }
+    }
+    &:hover,
+    &:focus {
+        background-color: darken($kickstarter, 10%);
+    }
+}
+
+.btn-indegogo {
+    border: none;
+    background: $indegogo;
+    color: #FFF;
+    padding: 0 28px;
+    &.btn-lg {
+        padding: 0 45px;
+        border-radius: 60px;
+        font: 500 22px/65px $poppin;
+        margin-bottom: 77px;
+        @media (max-width: 991px) {
+            padding: 0 70px;
+            font-size: 18px;
+            line-height: 60px;
+            margin-bottom: 15px;
+        }
+        @media (max-width: 767px) {
+            padding: 2px 40px 16px;
+            line-height: 40px;
+            img {
+                display: block;
+            }
+        }
+    }
+    &:hover,
+    &:focus {
+        background-color: darken($indegogo, 10%);
+    }
+}
+
+.btn-warning {
+    text-transform: uppercase;
+    font: 500 16px/40px $poppin;
+    padding: 0 35px;
+    border-radius: 30px;
+    color: $white;
+    border: none;
+    &:hover,
+    &:focus {
+        background: $baseColor;
+        color: $white;
+    }
+    &.btn-lg {
+        padding: 0 85px;
+        border-radius: 60px;
+        font: 500 27px/72px $poppin;
+        margin-bottom: 77px;
+        @media (max-width: 991px) {
+            padding: 0 70px;
+            font-size: 18px;
+            line-height: 60px;
+            margin-bottom: 15px;
+        }
+        @media (max-width: 767px) {
+            padding: 0 65px;
+        }
+    }
+    @media (max-width: 991px) {
+        margin-bottom: 35px;
+    }
+    @media (max-width: 767px) {}
+}
+
+.btn-link {
+    font: 300 15px/14px $poppin;
+    border-bottom: 1px solid;
+    text-decoration: none;
+    color: #007eff;
+    border-color: #a3c5ff;
+}
+
+.btn-block {
+    font: 600 19px/63px $poppin;
+    text-transform: uppercase;
+    border: none;
+    @include transition;
+    border-radius: 0;
+    background: $primary;
+    color: #FFF;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &.btn-rounded {
+        border-radius: 4px;
+        font: 600 26px/80px $poppin;
+        @media (max-width: 767px) {
+            font: 600 18px/60px $poppin;
+        }
+    }
+}
+
+
+/*============= Form Control - Form input Styles =============*/
+
+.form-control {
+    border-radius: 0;
+    box-shadow: none;
+    font: 300 17px/24px $poppin;
+    padding: 12px 18px;
+    height: 50px;
+    border-color: #e0e8ee;
+    background: $lightGray;
+    &::-moz-placeholder {
+        opacity: 1;
+        font: 300 17px/24px $poppin;
+        color: $lightBluish;
+    }
+    &:-ms-input-placeholder {
+        font: 300 17px/24px $poppin;
+        color: $lightBluish;
+    }
+    &::-webkit-input-placeholder {
+        font: 300 17px/24px $poppin;
+        color: $lightBluish;
+    }
+    &:focus {
+        background: transparent;
+        box-shadow: none;
+    }
+    &.alt {
+        background: #FFF;
+        border-color: #CCCCCC;
+    }
+}
+
+textarea.form-control {
+    resize: none;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.has-error .form-control,
+.has-error .form-control:focus {
+    box-shadow: none;
+    border-color: #F96152;
+    background: $white;
+}
+
+
+/*============= Utilities =============*/
+
+.mb-lg {
+    margin-bottom: 50px !important;
+}
+
+
+/*=============Custom Animation=============*/
+
+@keyframes doublePulse {
+    0% {
+        transform: scale(0.6);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+
+/*============= Magnific Popup =============*/
+
+.mfp-fade.mfp-bg {
+    opacity: 0;
+    background: #FFF;
+    transition: all .3s;
+}
+
+.mfp-fade.mfp-bg.mfp-ready {
+    opacity: .9;
+}
+
+.mfp-fade.mfp-bg.mfp-removing {
+    opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+    opacity: 0;
+    transition: all .3s;
+}
+
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+    opacity: 1;
+}
+
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+    opacity: 0;
+}
+
+
+/*===============================================
+  NAV TABS
+  ===============================================*/
+
+.nav-pills> li > a {
+    background-color: #eee;
+    padding: 10px 20px 7px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    ;
+}
+
+.nav-pills> li > a:hover {
+    background-color: #E7E7E7;
+}
+
+.nav-pills>li+li {
+    margin-left: 0;
+}
+
+.nav-pills > li:not(:first-child):not(:last-child) a {
+    border-radius: 0;
+}
+
+.nav-pills > li:first-child > a {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.nav-pills > li:last-child > a {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.nav-center {
+    text-align: center;
+}
+
+.nav-center ul.nav {
+    display: inline-block;
+}
+
+.nav-center ul.nav li {
+    display: inline;
+}
+
+.nav-center ul.nav li a {
+    float: left;
+}
+
+.nav-pills>li>a {
+    color: #C2C2C2;
+}
+
+
+/* 
+   Back to Top
+   ----------- */
+
+.back_to_top {
+    display: none;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.back_to_top:hover {
+    opacity: 0.5;
+}
+
+/* 
+   Gallery
+   ----------- */
+
+
+.gallery__image {
+    border-radius:3px;
+    margin-bottom:30px;
+}

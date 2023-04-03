@@ -1,0 +1,46 @@
+.the-watch{
+    padding: 102px 0 94px;    
+    .the-watch-img{
+        float: right;
+        @media (max-width: 991px){
+            float: left;
+            width: 100%;
+        }
+    }
+    img{
+        margin: 0 auto;
+        @media (max-width: 767px){
+            max-width: 200px;
+        }
+    }
+}
+.the-watch-features{
+    padding-top: 63px;
+    @media (max-width: 991px){
+        float: left;
+    }
+    @media (max-width: 767px){
+        padding-bottom: 50px;
+    }
+    .section-header{
+    }
+    ul{
+        li{
+            font: 300 20px/32px $poppin;
+            @media (max-width: 767px){
+                font-size: 16px;
+            }
+            & + li{
+                margin-top: 22px;
+            }
+            &:before{
+                width: 32px;
+                height: 32px;
+                margin-right: 17px;
+                content: '';
+                background: url(../images/check.png) no-repeat scroll 0 0;
+                float: left;
+            }
+        }
+    }
+}

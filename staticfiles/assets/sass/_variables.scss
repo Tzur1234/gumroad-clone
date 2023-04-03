@@ -1,0 +1,22 @@
+//FONT
+
+$poppin: 'Poppins', sans-serif;
+
+/*Color Variables*/
+
+$primary: #0084ff !default;
+$secondary: #ff6622 !default;
+$white: #fff;
+$black: #000;
+$baseColor: #374048;
+$lightGray: #f8fbfd;
+$darkGray: #82898f;
+$lightBluish: #c0cad0; 
+$baseLight: #e1e4e7; 
+// BRAND COLORS
+$kickstarter: #14e06e;
+$indegogo: #eb1478;
+// Mixins
+@mixin transition($property: all, $duration: 300ms, $animate: linear, $delay:0s) {
+    transition: $property $duration $animate $delay;
+}
