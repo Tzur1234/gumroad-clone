@@ -1,0 +1,835 @@
+/*=====================================================================
+@Default Colors
+
+Table of Content:
+01/ Prefix
+02/ Header
+03/ The Product
+04/ How it Works
+05/ The Benefits
+06/ Left Right Content
+07/ Our Collection
+08/ The Watch
+09/ Splt Columns
+10/ Reviews
+11/ FAQs
+12/ Tech Specs
+13/ Our Team
+14/ Timeline
+15/ Mobile App
+16/ Newsletter
+17/ Contact
+18/ Footer
+19/ Page Header
+20/ Blog
+21/ Sidebar
+22/ Comments
+23/ Popup
+24/ Products
+=====================================================================*/
+/*Color Variables*/
+/*=====Color Styles By Section=====*/
+/*===== GLOBAL =====*/
+a {
+  color: #FF1900;
+}
+
+a:hover, a:focus {
+  color: #660a00;
+}
+
+.btn-primary {
+  background: #FF1900;
+}
+
+.btn-warning {
+  background: #2FCA2D;
+}
+
+.btn-block {
+  background: #FF1900;
+}
+
+/*=====Header=====*/
+header.row .navbar {
+  background: #fff;
+}
+
+header.row .navbar .navbar-header .navbar-toggle {
+  background: none;
+  border: none;
+}
+
+header.row .navbar .navbar-header .navbar-toggle span {
+  background: #374048;
+}
+
+header.row .navbar .navbar-header .navbar-toggle[aria-expanded="true"] span {
+  background: #778897;
+}
+
+header.row .navbar.is-scrolling {
+  background: #fff;
+  box-shadow: 0 2px 42px rgba(0, 0, 0, 0.1);
+}
+
+header.row .navbar.is-scrolling .nav li a {
+  color: #8f969d;
+}
+
+header.row .navbar.is-scrolling .nav li.active a {
+  color: #FF1900;
+}
+
+header.alt-bg .navbar-default .nav > li > a {
+  color: #fff;
+}
+
+header.alt-bg .navbar .navbar-header .navbar-toggle span {
+  background: #fff;
+}
+
+header.alt-bg .navbar.is-scrolling .navbar-header .navbar-toggle span {
+  background: #374048;
+}
+
+.navbar-default .nav li a {
+  color: #8f969d;
+}
+
+.navbar-default .nav li a:hover, .navbar-default .nav li a:focus {
+  color: #374048;
+  background: none;
+}
+
+.navbar-default .nav li.active a {
+  background: none;
+  color: #2FCA2D;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  background-color: transparent;
+  color: #2FCA2D;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #2FCA2D;
+}
+
+.top-banner h2 {
+  color: #374048;
+}
+
+.top-banner p {
+  color: #8a9095;
+}
+
+body.home header .navbar {
+  background: transparent;
+}
+
+/*=====Section Header=====*/
+.section-header:after {
+  background: #eee;
+}
+
+.section-header h2 {
+  color: #374048;
+}
+
+.section-header p {
+  color: #969da3;
+}
+
+.section-header.v2:after {
+  background: #f6f8fa;
+}
+
+.section-header.v2 p {
+  color: #4e575f;
+}
+
+/*=====The Product=====*/
+.feature-note {
+  color: #FF1900;
+}
+
+.feature-note .indicator .plus-icon:before {
+  border-color: #FF1900;
+}
+
+.feature-note .indicator .plus-icon:after {
+  background: #FF1900;
+}
+
+.feature-note .indicator .plus-icon .plus {
+  background: #FF1900;
+  color: #fff;
+}
+
+.feature-note .feature-name:before {
+  background: #FF1900;
+}
+
+.feature-note .feature-name:after {
+  background: #FF1900;
+}
+
+/*=====How it Works=====*/
+.how-it-works {
+  background: #f8fbfd;
+}
+
+.work-process h3 {
+  color: #374048;
+}
+
+.work-process p {
+  color: #737c85;
+}
+
+/*=====The Benefits=====*/
+.benefit .media .media-left span {
+  color: #FF1900;
+}
+
+.benefit .media .media-body h4 {
+  color: #374048;
+}
+
+.benefit .media .media-body p {
+  color: #82898f;
+}
+
+/*=====Left Right Contents=====*/
+.left-right-contents {
+  background: #f8fbfd;
+}
+
+.left-right-contents .media .media-left span {
+  color: #FF1900;
+}
+
+.left-right-contents .media .media-body h4 {
+  color: #374048;
+}
+
+.left-right-contents .media .media-body p {
+  color: #82898f;
+}
+
+/*=====Our Collection=====*/
+.collections .item .title {
+  color: #FF1900;
+}
+
+.collections .item .category {
+  color: #b4bcc3;
+}
+
+.collections .item .price {
+  color: #2FCA2D;
+}
+
+/*=====The Watch=====*/
+.the-watch {
+  background: #f8fbfd;
+}
+
+.the-watch-features ul li {
+  color: #696f74;
+}
+
+/*=====Split Columns=====*/
+.split-column .texts h2 {
+  color: #374048;
+}
+
+.split-column .texts p {
+  color: #c0cad0;
+}
+
+/*=====Reviews=====*/
+.reviews {
+  background: #f8fbfd;
+}
+
+.review p {
+  color: #353535;
+}
+
+.featured-on {
+  background: #f8fbfd;
+}
+
+.featured-on h3 {
+  color: #374048;
+}
+
+/*=====FAQ=====*/
+.faq h4 {
+  color: #374048;
+}
+
+.faq p {
+  color: #82898f;
+}
+
+/*=====Tech Specs=====*/
+.tech-specs-row .tech-spec {
+  border-top-color: #f4f5f6;
+}
+
+.tech-specs-row h4 {
+  color: #374048;
+}
+
+.tech-specs-row ul li {
+  color: #82898f;
+}
+
+/*=====Team=====*/
+.team {
+  background: #f8fbfd;
+}
+
+.member .inner {
+  background: #fff;
+}
+
+.member .inner .texts h4 {
+  color: #374048;
+}
+
+.member .inner .texts h5 {
+  color: #82898f;
+}
+
+/*=====Timeline=====*/
+.timeline .timeline-row:before {
+  background: #dee0e2;
+}
+
+.timeline-post .bar-content .inner {
+  color: #bfc2c5;
+  background: #dee0e2;
+}
+
+.timeline-post .half-side:before {
+  border-color: #dee0e2;
+  background: #fff;
+}
+
+.timeline-post .half-side h4 {
+  color: #6a737b;
+}
+
+.timeline-post .half-side p {
+  color: #b7bbbf;
+}
+
+.timeline-post .half-side.date {
+  color: #dadce0;
+}
+
+.timeline-post .half-side.content .inner {
+  background: #f5f8fa;
+}
+
+.timeline-post .half-side + .half-side:before {
+  border-color: #dee0e2;
+  background: #fff;
+}
+
+@media (max-width: 767px) {
+  .timeline-post.has-content.odd .half-side + .half-side:before {
+    border-color: #dee0e2;
+  }
+}
+
+/*=====Mobile App=====*/
+.mobile-app {
+  background: #000;
+}
+
+.mobile-app h2 {
+  color: #fff;
+}
+
+.mobile-app p {
+  color: #feffff;
+}
+
+/*=====Newsletter=====*/
+.newsletter-form .input-group .input-group-addon {
+  background: none;
+  border-color: transparent;
+}
+
+.newsletter-form .input-group .input-group-addon button {
+  background: #FF1900;
+}
+
+.newsletter-form .input-group .input-group-addon button:hover, .newsletter-form .input-group .input-group-addon button:focus {
+  background: #374048;
+}
+
+.newsletter-form p {
+  color: #c0cad0;
+}
+
+/*=====Contact=====*/
+.contact-box {
+  background: #fff;
+}
+
+.contact-box h2 {
+  color: #374048;
+}
+
+.contact-box ul li {
+  color: #a5aeb3;
+}
+
+.contact-form {
+  background: #fff;
+}
+
+/*=====Footer=====*/
+footer.row {
+  background: #f8fbfd;
+}
+
+footer.row .menu-rights p {
+  color: #c3cbd1;
+}
+
+.footer-menu li {
+  color: #ffa399;
+}
+
+.footer-menu li a {
+  color: #ffa399;
+}
+
+.footer-menu li a:hover, .footer-menu li a:focus {
+  background: none;
+  color: #374048;
+}
+
+.social-links {
+  border-bottom-color: #e9eef2;
+}
+
+.social-links ul li a {
+  background: #ffa399;
+  color: #fff;
+}
+
+.social-links ul li a:hover, .social-links ul li a:focus {
+  background: #374048;
+}
+
+/*=====Page Header=====*/
+.page-header {
+  background: #e9eaec;
+}
+
+.page-header h2 {
+  color: #374048;
+}
+
+.page-header h4 {
+  color: #828588;
+}
+
+/*=====Sidebar=====*/
+.widget-title {
+  color: #374048;
+}
+
+.widget-search form .form-control {
+  border-color: #e2eaef;
+  background: #f8fbfd;
+}
+
+.widget-search form .form-control + .input-group-addon {
+  border-color: #e2eaef;
+  background: #f8fbfd;
+}
+
+.widget-search form .form-control + .input-group-addon button {
+  background-color: transparent;
+  color: #ced5da;
+}
+
+.recent-post .media-body h4 a {
+  color: #656d75;
+}
+
+.recent-post .media-body h5 {
+  color: #c7d0d8;
+}
+
+.recent-post .media-body h5 a {
+  color: #65a9f0;
+}
+
+.categories li a {
+  color: #8e9eac;
+}
+
+.categories li a:hover, .categories li a:focus {
+  background: none;
+  color: #374048;
+}
+
+.tag {
+  color: #bdc7ce;
+  background: #f8fbfd;
+  border-color: #e0e8ee;
+}
+
+.tag:hover, .tag:focus {
+  background: #374048;
+  border-color: #374048;
+  color: #fff;
+}
+
+/*=====Blog=====*/
+.blog h2 a {
+  color: #323f4a;
+}
+
+.blog h2 a:hover, .blog h2 a:focus {
+  color: #2979ff;
+}
+
+.blog h5 {
+  color: #a9b9c7;
+}
+
+.blog h5 a {
+  color: #52a8f5;
+}
+
+.blog h5 a:hover, .blog h5 a:focus {
+  color: #374048;
+}
+
+.blog p {
+  color: #8e9eac;
+}
+
+.blog .btn-primary {
+  background: #2979ff;
+}
+
+.post-activity {
+  border-right-color: #e5e7ea;
+}
+
+@media (max-width: 499px) {
+  .post-activity {
+    border-bottom-color: #e5e7ea;
+    border-top-color: #e5e7ea;
+  }
+}
+
+.post-activity .activity + .activity {
+  border-top-color: #e5e7ea;
+}
+
+@media (max-width: 499px) {
+  .post-activity .activity + .activity {
+    border-left-color: #e5e7ea;
+  }
+}
+
+.post-activity .activity a {
+  color: #97a1aa;
+}
+
+.author-about {
+  background: #f8fbfd;
+}
+
+.author-about .media-body h3 a {
+  color: #292929;
+}
+
+.author-about .media-body h3 a:hover, .author-about .media-body h3 a:focus {
+  color: #2979ff;
+}
+
+.author-about .media-body p {
+  color: #8e9eac;
+}
+
+.author-about .media-body ul li a {
+  color: #fff;
+  background: #bbd4e6;
+}
+
+.author-about .media-body ul li a:hover, .author-about .media-body ul li a:focus {
+  background: #374048;
+}
+
+/*=====Comments======*/
+.comment-count {
+  color: #292929;
+}
+
+.comment {
+  border-color: #d9e7f1;
+}
+
+.comment p {
+  color: #8e9eac;
+}
+
+.commenter-link img {
+  border-color: #d9e7f1;
+}
+
+.commenter-name a {
+  color: #292929;
+}
+
+.commenter-name small a {
+  color: #8e9eac;
+}
+
+.add-comment h2 {
+  color: #292929;
+}
+
+.add-comment p {
+  color: #c3d1de;
+}
+
+/*=====PopUp Background======*/
+.mfp-bg {
+  background: #FFF;
+  opacity: 0.9;
+}
+
+/*=====Product======*/
+.product-box {
+  background: #fff;
+}
+
+.product-box .mfp-close {
+  color: #8a9095;
+}
+
+.product-img-gallery {
+  background: #f8f8f8;
+}
+
+#product-imgs .carousel-indicators li {
+  background: #dadada;
+}
+
+#product-imgs .carousel-indicators li.active {
+  background: #FF1900;
+}
+
+.product-desc .name {
+  color: #848e96;
+}
+
+.product-desc .edition {
+  color: #374048;
+}
+
+.product-desc .model {
+  color: #a8afb5;
+}
+
+.product-desc .price {
+  color: #FF1900;
+}
+
+.product-desc .price del {
+  color: #808890;
+}
+
+.product-desc .price .label {
+  background: #ff840f;
+}
+
+.product-desc .description {
+  border-color: #eee;
+}
+
+.product-desc .description p {
+  color: #979a9d;
+}
+
+.product-desc .choose-form .choose-options {
+  border-color: #eee;
+}
+
+.product-desc .choose-form .option .form-label {
+  color: #6c6e71;
+}
+
+.product-desc .choose-form .option input[name="color"] + label[for="color-1"],
+.product-desc .choose-form .option input[name="os0"] + label[for="color-1"] {
+  background: #2eafff;
+}
+
+.product-desc .choose-form .option input[name="color"] + label[for="color-1"]:before,
+.product-desc .choose-form .option input[name="os0"] + label[for="color-1"]:before {
+  border-color: #2eafff;
+}
+
+.product-desc .choose-form .option input[name="color"] + label[for="color-2"],
+.product-desc .choose-form .option input[name="os0"] + label[for="color-2"] {
+  background: #5c2eff;
+}
+
+.product-desc .choose-form .option input[name="color"] + label[for="color-2"]:before,
+.product-desc .choose-form .option input[name="os0"] + label[for="color-2"]:before {
+  border-color: #5c2eff;
+}
+
+.product-desc .choose-form .option input[name="color"] + label[for="color-3"],
+.product-desc .choose-form .option input[name="os0"] + label[for="color-3"] {
+  background: #ff2e99;
+}
+
+.product-desc .choose-form .option input[name="color"] + label[for="color-3"]:before,
+.product-desc .choose-form .option input[name="os0"] + label[for="color-3"]:before {
+  border-color: #ff2e99;
+}
+
+.product-desc .choose-form .option input[name="color"] + label[for="color-4"],
+.product-desc .choose-form .option input[name="os0"] + label[for="color-4"] {
+  background: #ffe62e;
+}
+
+.product-desc .choose-form .option input[name="color"] + label[for="color-4"]:before,
+.product-desc .choose-form .option input[name="os0"] + label[for="color-4"]:before {
+  border-color: #ffe62e;
+}
+
+.product-desc .choose-form .option input[name="color"] + label[for="color-5"],
+.product-desc .choose-form .option input[name="os0"] + label[for="color-5"] {
+  background: #2effa1;
+}
+
+.product-desc .choose-form .option input[name="color"] + label[for="color-5"]:before,
+.product-desc .choose-form .option input[name="os0"] + label[for="color-5"]:before {
+  border-color: #2effa1;
+}
+
+.product-desc .choose-form .submit-area .btn:hover, .product-desc .choose-form .submit-area .btn:focus {
+  color: #fff;
+}
+
+.product-desc .choose-form .bootstrap-touchspin input {
+  border-color: #e0e8ee;
+  background: none;
+}
+
+.product-desc .choose-form .bootstrap-touchspin button {
+  border-color: #e0e8ee;
+}
+
+.product-desc .choose-form .bootstrap-touchspin button:before {
+  color: #96a1a9;
+}
+
+.product-desc .choose-form .bootstrap-select .dropdown-toggle {
+  border-color: #e0e8ee;
+  color: #374048;
+}
+
+.product-desc .choose-form .bootstrap-select .dropdown-toggle .bs-caret {
+  color: #96a1a9;
+  border-left-color: #e0e8ee;
+}
+
+/*=====Video======*/
+.watch-review + button.mfp-close {
+  background: #fff;
+  color: #333;
+}
+
+.watch-review + button.mfp-close:hover {
+  color: #000;
+}
+
+.pagination li a {
+  background: #f7f7f7;
+  color: #999;
+}
+
+.pagination li a:hover, .pagination li a:focus {
+  color: #fff;
+  background: #2979ff;
+}
+
+.pagination li.active a {
+  color: #fff;
+  background: #2979ff;
+}
+
+.pagination li.active a:hover, .pagination li.active a:focus {
+  background: #374048;
+}
+
+/*  =========== NAV TABS =========== */
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover {
+  background-color: #FF1900;
+}
+
+/*  =========== UTILITIES =========== */
+.help-block.text-danger {
+  color: #FF5B58;
+}
+
+.help-block.text-success {
+  color: #53CC2E;
+}
+
+/*  =========== PRICING =========== */
+.pricing {
+  border-color: #e1e4e7;
+}
+
+.pricing .pricing__title {
+  color: #FF1900;
+}
+
+.pricing .pricing__price {
+  color: #2FCA2D;
+}
+
+.pricing:hover {
+  border-color: #c5cbd0;
+}
+
+.pricing--featured {
+  background-color: #FF1900;
+}
+
+.pricing--featured .pricing__title {
+  color: #fff;
+}
+
+.pricing--featured .pricing__price {
+  color: #fff;
+}
+
+.pricing--featured .pricing__content li {
+  color: #fff;
+}
+
+/*# sourceMappingURL=red-green.css.map */

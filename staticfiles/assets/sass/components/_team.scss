@@ -1,0 +1,31 @@
+.team{
+    padding: 93px 0 80px;
+    .team_members{
+        padding-top: 5px;        
+    }
+}
+
+.member{
+    padding: 15px;
+    text-align: center;
+    .inner{
+        max-width: 263px;
+        margin: 0 auto;
+        .image{
+            img{
+                max-width: 100%;
+            }
+        }
+        .texts{
+            padding: 24px 0 20px;
+            h4{
+                margin: 0 0 10px;
+                font: 500 20px/1 $poppin;
+            }
+            h5{
+                margin: 0;
+                font: 300 14px/1 $poppin;
+            }
+        }
+    }
+}

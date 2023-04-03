@@ -1,0 +1,28 @@
+.pricing {
+    border: solid 1px;
+    border-radius: 5px;
+    padding: 20px 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pricing__title {
+    margin-bottom: 20px; 
+}
+
+.pricing__price {
+    margin: 30px 0 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.pricing__content ul {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+
+.pricing--featured {
+	border:0;
+}
