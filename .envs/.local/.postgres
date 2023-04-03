@@ -1,9 +1,0 @@
-# PostgreSQL
-# ------------------------------------------------------------------------------
-POSTGRES_HOST=postgres
-POSTGRES_PORT=5432
-POSTGRES_DB=my_awesome_project
-POSTGRES_USER=DleMiLKNSKFQKtexAvanWphkOslGOCdk
-POSTGRES_PASSWORD=ZpOxSn5u7m0m7YUX2lJseH47ZZ0H4y9DXvUS1OQ31iSdcmkz3fNJnI9HoTWvRuO3
-
-DATABASE_URL=postgres://djgumroaddb_user:mANSJAi48D6amh9dzxjxW5CP1hkcFTkH@dpg-cgdid8l269v52g0otcn0-a.frankfurt-postgres.render.com/djgumroaddb
