@@ -23,12 +23,25 @@ CACHES = {
     }
 }
 
-# EMAIL
+# EMAIL EPS (email provider services)
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
+
 EMAIL_BACKEND = env(
     "DJANGO_EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend"
 )
+
+
+# EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
+# ANYMAIL = {
+#     "SENDINBLUE_API_KEY": env('SENDINBLUE_API_KEY'),
+#     "SENDINBLUE_API_URL" :  env('SENDINBLUE_API_URL'),
+#     "SENDINBLUE_SENDER_DOMAIN":  env('SENDINBLUE_SENDER_DOMAIN')
+# }
+# DEFAULT_FROM_EMAIL= env('DEFAULT_FROM_EMAIL')
+
+
+
 
 # WhiteNoise
 # ------------------------------------------------------------------------------

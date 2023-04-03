@@ -65,6 +65,9 @@ DEFAULT_FROM_EMAIL = env(
     "DJANGO_DEFAULT_FROM_EMAIL",
     default="djgumroad <noreply@example.com>",
 )
+
+
+
 # https://docs.djangoproject.com/en/dev/ref/settings/#server-email
 SERVER_EMAIL = env("DJANGO_SERVER_EMAIL", default=DEFAULT_FROM_EMAIL)
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
@@ -85,10 +88,10 @@ INSTALLED_APPS += ["anymail"]  # noqa F405
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
 # https://anymail.readthedocs.io/en/stable/installation/#anymail-settings-reference
 # https://anymail.readthedocs.io/en/stable/esps/mailgun/
+
 EMAIL_BACKEND = env(
     "DJANGO_EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend"
 )
-
 
 # EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 # ANYMAIL = {
@@ -96,6 +99,24 @@ EMAIL_BACKEND = env(
 #     "MAILGUN_SENDER_DOMAIN": env("MAILGUN_DOMAIN"),
 #     "MAILGUN_API_URL": env("MAILGUN_API_URL", default="https://api.mailgun.net/v3"),
 # }
+
+
+EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
+ANYMAIL = {
+    "SENDINBLUE_API_KEY": env('SENDINBLUE_API_KEY'),
+    "SENDINBLUE_API_URL" :  env('SENDINBLUE_API_URL'),
+    "SENDINBLUE_SENDER_DOMAIN":  env('SENDINBLUE_SENDER_DOMAIN')
+}
+DEFAULT_FROM_EMAIL= env('DEFAULT_FROM_EMAIL')
+
+# SMTP
+
+# EMAIL_BACKEND = env("EMAIL_BACKEND")
+# EMAIL_HOST = env("EMAIL_HOST")
+# EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+# EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+# EMAIL_USER_TLS = env("EMAIL_USER_TLS")
+# EMAIL_PORT = env("EMAIL_PORT")
 
 
 # LOGGING
