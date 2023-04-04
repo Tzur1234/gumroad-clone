@@ -11,7 +11,7 @@ SECRET_KEY = env(
     default="0CCoSUJTEfYYgWQ1sWvFIbijlvmEmPKjD2O6FEyAYbYYT1DjuxcJMDHxkICi0QNy",
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", 'c0bf-89-139-57-213.eu.ngrok.io', 'd169-89-139-57-213.eu.ngrok.io']
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", 'c0bf-89-139-57-213.eu.ngrok.io', '5df8-89-139-57-213.eu.ngrok.io']
 
 # CACHES
 # ------------------------------------------------------------------------------
@@ -27,18 +27,18 @@ CACHES = {
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
 
-EMAIL_BACKEND = env(
-    "DJANGO_EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend"
-)
+# EMAIL_BACKEND = env(
+#     "DJANGO_EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend"
+# )
 
 
-# EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
-# ANYMAIL = {
-#     "SENDINBLUE_API_KEY": env('SENDINBLUE_API_KEY'),
-#     "SENDINBLUE_API_URL" :  env('SENDINBLUE_API_URL'),
-#     "SENDINBLUE_SENDER_DOMAIN":  env('SENDINBLUE_SENDER_DOMAIN')
-# }
-# DEFAULT_FROM_EMAIL= env('DEFAULT_FROM_EMAIL')
+EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
+ANYMAIL = {
+    "SENDINBLUE_API_KEY": env('SENDINBLUE_API_KEY'),
+    "SENDINBLUE_API_URL" :  env('SENDINBLUE_API_URL'),
+    "SENDINBLUE_SENDER_DOMAIN":  env('SENDINBLUE_SENDER_DOMAIN')
+}
+DEFAULT_FROM_EMAIL= env('DEFAULT_FROM_EMAIL')
 
 
 
