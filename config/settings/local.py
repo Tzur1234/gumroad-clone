@@ -11,7 +11,7 @@ SECRET_KEY = env(
     default="0CCoSUJTEfYYgWQ1sWvFIbijlvmEmPKjD2O6FEyAYbYYT1DjuxcJMDHxkICi0QNy",
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", 'c0bf-89-139-57-213.eu.ngrok.io', 'djgumroad-app-xmuhn.ondigitalocean.app']
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", 'c0bf-89-139-57-213.eu.ngrok.io', 'd169-89-139-57-213.eu.ngrok.io']
 
 # CACHES
 # ------------------------------------------------------------------------------
