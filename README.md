@@ -7,7 +7,7 @@ Build a clone of gumroad.com. Gumroad is a place where creators can sell their d
 ## Features
 - Full featured "E-Commerce app" where creators can sell their digital products and get paid. 
 - Sending Email (with SendInBlue API )
-- Simulate a real payment process by using the Stipe API. Use Stripe Payments and Stripe Connect to handle accept payments and sending payouts to all the creators.
+- Simulate a real payment process by using the Stripe API. Use Stripe Payments and Stripe Connect to handle accept payments and sending payouts to all the creators.
 - Create,  View , Update and delete Products (all Class-Based-View)
 - Secured app by applying security principles:
         - **CSRF token**
