@@ -10,12 +10,12 @@ Build a clone of gumroad.com. Gumroad is a place where creators can sell their d
 - Simulate a real payment process by using the Stripe API. Use Stripe Payments and Stripe Connect to handle accept payments and sending payouts to all the creators.
 - Create,  View , Update and delete Products (all Class-Based-View)
 - Secured app by applying security principles:
-        - **CSRF token**
-        - Only using **Https**
-        - Use the LoginRequiredMixin to secure each view
-        - Authorization and Authentication the users using the **allauth library**
-        - Secure the Frontend with Django template engine ({% request.is.authenticated %})
-        - Secure the sensetive info by using the **environ library** to store all **enviroment veriabels**
+     - **CSRF token**
+     - Only using **Https**
+     - Use the LoginRequiredMixin to secure each view
+     - Authorization and Authentication the users using the **allauth library**
+     - Secure the Frontend with Django template engine ({% request.is.authenticated %})
+     - Secure the sensetive info by using the **environ library** to store all **enviroment veriabels**
 - **Signals** event dispatchers like – pre_save, post_save
 - Uploading files options (Images and Documents)
 - Combining the **“Flash message”** feature
