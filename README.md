@@ -1,6 +1,7 @@
 # Django Gumroad Clone
 
 ### link to the deployed app website: https://djgumroad-app-xmuhn.ondigitalocean.app/
+### link to demo video: https://youtu.be/-RqRnl6G4UE
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
