@@ -34,8 +34,8 @@ This project shows demonstrate the work with Different API's and leverage the us
 3. Create a new file named ```.env``` inside the root of you project folder
 4. Copy all of the variables inside ```.env.template``` to your ```.env``` file and fill your own values inside 
 5. Download **Postgresql** and configure the connection parameters with to your own db in ```settings.py```, [see link for tutorial for more explanation](http://shorturl.at/dxEZ6) 
-6. Learn how to create your own ```SECRET_KEY``` : https://bit.ly/42atuj1 and copy it to ```.env``` file
-you can find all the [settings you have to config here](http://cookiecutter-django.readthedocs.io/en/latest/settings.html).
+6. Learn how to create your own ```SECRET_KEY``` : https://bit.ly/42atuj1 and copy it to ```.env``` file.
+You can find all the [settings you have to config here](http://cookiecutter-django.readthedocs.io/en/latest/settings.html).
 7. Create an account in Stripe
 8. Copy and fill the DJANGO_SECRET_KEY and STRIPE_PUBLIC_KEY from your account 
 9. Create a secure https host using ngrock (https://dashboard.ngrok.com/get-started/your-authtoken) and add the new secure host to your ALLOWED_HOST in config/settings/local.py
