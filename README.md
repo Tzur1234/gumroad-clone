@@ -2,7 +2,7 @@
 
 ### link to the deployed app website: https://djgumroad-app-xmuhn.ondigitalocean.app/
 
-Build a clone of gumroad.com. Gumroad is a place where creators can sell their digital products and get paid. I have used the Stripe Payments and Stripe Connect to handle accept payments and sending payouts to all the creators.
+This time I have built a clone of gumroad.com. Gumroad is a place where creators can sell their digital products and get paid. I have used the Stripe Payments and Stripe Connect to handle accept payments and sending payouts to all the creators.
 
 This project shows demonstrate the work with Different API's and leverage the usage of them   
 
