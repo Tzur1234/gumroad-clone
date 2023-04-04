@@ -1,4 +1,27 @@
-# Gumroad Clone
+# Django Gumroad Clone
+
+### link to the deployed app website: https://djgumroad-app-xmuhn.ondigitalocean.app/
+
+Build a clone of gumroad.com. Gumroad is a place where creators can sell their digital products and get paid. I have used the Stripe Payments and Stripe Connect to handle accept payments and sending payouts to all the creators.
+
+## Features
+- Full featured "E-Commerce app" where creators can sell their digital products and get paid. 
+- Sending Email (with SendInBlue API )
+- Simulate a real payment process by using the Stipe API. Use Stripe Payments and Stripe Connect to handle accept payments and sending payouts to all the creators.
+- Create,  View , Update and delete Products (all Class-Based-View)
+- Secured app by applying security principles:
+        - **CSRF token**
+        - Only using **Https**
+        - Use the LoginRequiredMixin to secure each view
+        - Authorization and Authentication the users using the **allauth library**
+        - Secure the Frontend with Django template engine ({% request.is.authenticated %})
+        - Secure the sensetive info by using the **environ library** to store all **enviroment veriabels**
+- **Signals** event dispatchers like – pre_save, post_save
+- Uploading files options (Images and Documents)
+- Combining the **“Flash message”** feature
+- Designed web app displays for users
+- Customized admin site Interface
+- Using the **Cookiecutter package**, a project template for advacned production-ready Django projects.
 
 
 
