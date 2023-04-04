@@ -2,6 +2,8 @@
 
 ### link to the deployed app website: https://djgumroad-app-xmuhn.ondigitalocean.app/
 
+### License: MIT
+
 This time I have built a clone of gumroad.com. Gumroad is a place where creators can sell their digital products and get paid. I have used the Stripe Payments and Stripe Connect to handle accept payments and sending payouts to all the creators.
 
 This project shows demonstrate the work with Different API's and leverage the usage of them   
@@ -48,7 +50,7 @@ You can find all the [settings you have to config here](http://cookiecutter-djan
 
 If you have closely followed the instructions, you suppose the see the home html page and you can loging thesystem using the superuser credentials
 
-### License: MIT
+
 
 ## Get strated as a User
 
