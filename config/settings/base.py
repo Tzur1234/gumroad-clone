@@ -19,7 +19,7 @@ if READ_DOT_ENV_FILE:
 # GENERAL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
-DEBUG = env.bool("DJANGO_DEBUG", False)
+DEBUG = env.bool("DJANGO_DEBUG", True)
 # Local time zone. Choices are
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # though not all of them may be available with every OS.
@@ -316,6 +316,7 @@ SPECTACULAR_SETTINGS = {
 STRIPE_PUBLIC_KEY= env("STRIPE_PUBLIC_KEY")
 STRIPE_SECRET_KEY= env("STRIPE_SECRET_KEY")
 STRIPE_WEBHOOK_SECRET= env("STRIPE_WEBHOOK_SECRET")
+STRIPE_ENDPOINT_SECRET = env("STRIPE_ENDPOINT_SECRET")
 
 # SUPERUSER
 DJANGO_SUPERUSER_PASSWORD = env('DJANGO_SUPERUSER_PASSWORD')
