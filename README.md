@@ -24,6 +24,10 @@ Build a clone of gumroad.com. Gumroad is a place where creators can sell their d
 - Using the **Cookiecutter package**, a project template for advacned production-ready Django projects.
 
 
+     - First nested list item
+       - Second nested list item
+
+
 
 ## Running the project
 TODO
