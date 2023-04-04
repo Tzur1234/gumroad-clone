@@ -132,12 +132,12 @@ class CreateCheckoutSessionView(generic.View):
             stripe_customer_id = None
             stripe_customer_email = None
 
-        if settings.DEBUG:
+        if settings.DJANGO_READ_DOT_ENV_FILE:
             YOUR_DOMAIN = 'http://localhost:8000'
             product_images_url = ['https://media.istockphoto.com/id/1291049124/photo/concept-for-debugging-and-fixing-errors-in-the-code.jpg?s=2048x2048&w=is&k=20&c=1xecIrsSNhtav7KAgB5majTkXUd147WfRWXyYSgqwWw=']
         else: 
-            YOUR_DOMAIN = 'https://mydomain.com'
-            product_images_url = [YOUR_DOMAIN + choosen_product.cover.url]
+            YOUR_DOMAIN = 'https://djgumroad-app-xmuhn.ondigitalocean.app'
+            product_images_url = [YOUR_DOMAIN + '/media/' + choosen_product.cover.url]
 
         # user id
         if request.user.stripe_customer_id == None:
